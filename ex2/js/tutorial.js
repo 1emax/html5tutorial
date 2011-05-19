@@ -1,4 +1,4 @@
-console.info("You have a working console")
+console.info("Ваша консоль работает")
 
 var canvas = document.getElementById("main");
 var context = canvas.getContext("2d");

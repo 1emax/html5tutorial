@@ -1,1 +1,1 @@
-console.info("You have a working console")
+console.info("Ваша консоль работает")

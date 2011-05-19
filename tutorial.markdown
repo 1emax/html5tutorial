@@ -1,51 +1,45 @@
-# HTML5: Beyond the Buzzwords
+# HTML5: Больше, чем модная фишка
 
-# GOALS
+# ЗАДАЧИ
 
-I am aiming to expand your imagination about the kinds of features that can be added to modern web applications without adding any dependencies
-or friction to your codebase. I want to provide you with just enough knowledge that you could start to take advantage of these
-capabilities in your own apps.
+Цель этого учебника - показать вам, какие новые возможности могут быть использованы в современных веб-приложениях без участия дополнительных зависимостей и противоречий с уже существующим кодом. Курс рассчитан на то, чтобы дать вам достаточно знаний для самостоятельного использования новых возможностей в своих приложениях.
 
-# PREREQUISITES
+# ПРЕДВАРИТЕЛЬНЫЕ ТРЕБОВАНИЯ
 
-- These instructions were built using the latest version of Chrome, but will also work with the latest version of Safari or Firefox. Some of the exercises do not work perfectly in Firefox due to limitations in the browser. 
-I have not tested them with IE or Opera but much of the code should still work.
+- Все упражнения проверялись в последних версиях браузера Chrome, но они должны работать и в последних версиях Safari и Firefox. Некоторые упражнения работают в Firefox не так, как задумано, из-за ограничений браузера.
+Я не проверял работоспособность в IE или Opera, но большая часть кода должна работать и там.
 
-- Your browser should have a built-in JavaScript console. Chrome and Safari have a built-in JavaScript console. If you are using Firefox, be sure to install [Firebug](http://getfirebug.com).
+- Ваш браузер должен иметь консоль JavaScript. Такая консоль уже имеется в Safari и Chrome. Если вы используете Firefox, не забудьте установить [Firebug](http://getfirebug.com).
 
-- You need some kind of basic text editor (Vi, Emacs, Textmate, Notepad, etc.) to make changes to the project files.
+- Вам понадобится текстовый редактор (Vi, Emacs, Textmate, Notepad, etc.) для внесения изменений в файлы проекта.
 
-# SETUP
+# УСТАНОВКА
 
-1. Copy the directory named `start` from this project to a new location on your machine. This will form the basis for the game we are building
-and includes all necessary dependencies.
+1. Скопируйте директорию `start` из этого проекта в какое-нибудь другое место. Эта директория содержит все необходимые зависимости и послужит основой для игры, которую мы будем делать.
 
-2. In your project, examine the index.html file you copied from `start`. This skeleton is heavily stripped down from the [HTML5 Boilerplate project](http://html5boilerplate.com/). The [full template](https://github.com/paulirish/html5-boilerplate/blob/master/index.html) 
-is a good way to learn some state of the art HTML5 practices.
+2. Изучите файл index.html в скопированной директории `start`. Он представляет собой упрощенный шаблон, основанный на [HTML5 Boilerplate project](http://html5boilerplate.com/). Здесь вы можете найти [полный шаблон](https://github.com/paulirish/html5-boilerplate/blob/master/index.html). Это отличный способ изучить особенности HTML5.
 
-    Note the doctype that starts this file. That's all you need to do to indicate to the browser that you want to use the latest, greatest version of HTML. 
-    The boilerplate also shows the use of new HTML5 semantic tags `<header>` and `<footer>`. You can use these instead of less semantic code such as `<div id="header"></div>`.
+    Обратите внимание на DOCTYPE, с которого начинается этот файл. Это все, что нужно, чтобы указать браузеру, что вы используете последнюю, самую современную версию HTML.
+    Кроме того, в шаблоне используются новые семантические тэги `<header>` и `<footer>`. Их можно использовать вместо менее семантической разметки вроде `<div id="header"></div>`.
 
-3. Open up the index.html file in your browser. Then activate your JavaScript console (in Chrome, go to the View menu, choose Developer, then choose JavaScript console; in Safari, hit option-Apple-C). You should see the message "You have a working console". If you don't see this message you should install Firebug or switch to a different browser.
-You will have a hard time completing this tutorial without a working console.
+3. Откройте index.html в вашем браузере. Затем откройте консоль JavaScript (в Chrome это делается через меню Вид > Разработчик > Консоль Javascript; в Safari достаточно нажать option-Apple-C). В консоли должно быть сообщение "Ваша консоль работает". Если вы не видите это сообщение, попробуйте установить Firebug или открыть файл в другом браузере. Без работающей консоли следовать этому руководству крайне затруднительно.
 
-    That message was created by the file `js/tutorial.js`. I'll be using that file for all of our application code.
+    Это сообщение было отправлено в консоль в файле `js/tutorial.js`. Я буду использовать этот файл для всего кода приложения.
 
-# EXERCISE ONE 
-## Feature Detection
+# УПРАЖНЕНИЕ 1 
+## Определение возможностей
 
-1. Examine `js/libs/modernizr`. This is the [Modernizr](http://www.modernizr.com/) library that performs browser feature detection and helps style new HTML5 semantic elements. Because you can't yet
-rely on users having fully-capable browsers, feature detection is essential for providing useful error messages and fallbacks.
+1. Изучите файл `js/libs/modernizr`. Это библиотека [Modernizr](http://www.modernizr.com/), которая выполняет определение возможностей браузера и помогает применять стили к новым семантическим элементам HTML5. Пока рано полагаться на то, что браузеры полностью поддерживают новые возможности, поэтому крайне важно проводить определение возможностей браузера и выдавать осмысленные сообщения об ошибках в случае необходимости.
 
-2. To activate Modernizr, use your favorite text editor to add this line to the `<HEAD>` tag of `index.html`.
+2. Чтобы подключить Modernizr, откройте текстовый редактор и добавьте в тэг `<HEAD>` файла `index.html` следующую строку:
 
     `<script src="js/libs/modernizr-1.7.js"></script>`
 
-    Then add the class `no-js` to the `<HTML>` tag on the second line of the index.html file.
+    Затем добавьте класс `no-js` к тэгу `<HTML>` во второй строке файла index.html.
 
-3. Open up `index.html` in your browser and inspect the `<HTML>` tag. Notice that `no-js` has been replaced by several CSS declarations that can be used to style fallback content, reveal error messages, etc.
+3. Откройте `index.html` в браузере и посмотрите на тэг `<HTML>`. Обратите внимание на то, что класс `no-js` был заменен на ряд объявлений CSS. Эти объявления можно использовать, чтобы показывать сообщения об ошибках или для стилизации контента, предъявлемого при недоступности некоторого функционала.
 
-4. Open up a JavaScript console and inspect the Modernizr object. To be able to complete all of the exercises in this tutorial, you'll need to see true values for all of these properties:
+4. Откройте консоль JavaScript и изучите объект Modernizr. Вы сможете выполнить все упражнения этого учебника, если все нижеприведенные свойства будут иметь значение true:
 
     * Modernizr.canvas
     * Modernizr.websockets
@@ -53,14 +47,13 @@ rely on users having fully-capable browsers, feature detection is essential for 
     * Modernizr.geolocation
     * Modernizr.localstorage
 
-    If you don't see "true" for all of these you should go ahead and install the [Chrome](http://www.google.com/chrome) browser.
+    Если какие-либо из этих свойств не имеют значения "true", установите браузер [Chrome](http://www.google.com/chrome).
 
-## Extra Credit
+## Дополнительное задание
 
-Using only CSS and HTML, use the `<HTML>` classes `touch` and `no-touch` to reveal a message to the user indicating whether or not they have a touch interface. If you have a mobile OS simulator installed (such as iOS Simulator) you can
-test both messages.
+Используя только CSS и HTML и полагаясь на классы `touch` и `no-touch` элемента `<HEAD>`, выведите соотвествующее сообщение о том, поддерживает ли устройство пользователя тач-интерфейс. Если у вас установлен симулятор мобильной ОС (например, iOS Simulator), проверьте оба случая.
 
-# EXERCISE TWO 
+# УПРАЖНЕНИЕ 2 
 ## Basic Canvas Drawing
 
 1. Add `<canvas id="main" width="400" height="400"></canvas>` just after the opening of the `<body>` tag in your `index.html` file.
