@@ -1,9 +1,12 @@
-# HTML5: Beyond the Buzzwords
+# HTML5: Больше, чем модная фишка
 
-This project contains the exercises and solutions for a [HTML5: Beyond the Buzzwords](http://en.oreilly.com/rails2011/public/schedule/detail/18321) tutorial that I am teaching at RailsConf 2011.
+Этот проект является переводом руководства [HTML5: Beyond the Buzzwords](http://en.oreilly.com/rails2011/public/schedule/detail/18321), который был подготовлен [Майком Субельски](https://github.com/subelsky) для RailsConf 2011.
 
-See the `tutorial.html` file for the exercises and prerequisites.
+Откройте `tutorial.html` и следуйте инструкциям.
 
-# Problems? Questions? Kudos
+# Проблемы? Вопросы? Ошибки?
 
-Email <mike@subelsky.com>, and thanks!
+Связаться с автором руководства: <mike@subelsky.com>.
+Связаться с переводчиком: <kaluzhanin@gmail.com>.
+
+Спасибо за интерес к HTML5!
