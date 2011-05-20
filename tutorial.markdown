@@ -266,13 +266,12 @@
 
 3. Увеличьте скорость перемещения персонажа так, чтобы он перемещался на 5 или 10 пикселей на одно нажатие клавиши.
 
-# EXERCISE 8
+# УПРАЖНЕНИЕ 8
 ## Web Sockets
 
-**Note**: WebSockets are disabled in Firefox. You may be able to get something working by using [socket.io](http://socket.io/).
+**Примечание**: WebSockets не работают в Firefox. Вы можете исправить это (частично) с помощью [socket.io](http://socket.io/).
 
-1. Let's connect to a websocket server in order to exchange information with other players.  Add the following code to your `tutorial.js` file. I noticed that I would sometimes get errors
-if this code fired before the `characters.gif` image file loaded, so you may want to stick this in the onload handler for that object. See the exercise 8 solution if this is confusing.
+1. Подключим websocket-сервер для обмена информацией с другими игроками. Добавьте в `tutorial.js` код, приведенный ниже. Я заметил, что если этот код выполняется до загрузки `characters.gif`, это иногда приводит к ошибкам. Возможно, имеет смысл вставить этот код в обработчик события `onload` картинки. Если вам непонятно, о чем речь, загляните в решение для упражнения 8.
 
     <pre>var ws = new WebSocket("ws://exp.subelsky.com:8011");
     ws.onmessage = handleMessage;
@@ -281,32 +280,30 @@ if this code fired before the `characters.gif` image file loaded, so you may wan
       console.info(event.data);
     }</pre>
 
-2. Reload your browser. Every 10 seconds you should see a "ping" message from the server.  Note that this is a JSON string that we'll need to unmarshal before we can work with it.
+2. Обновите страницу. Каждые 10 секунд с сервера должно приходить сообщение "ping". Обратите внимание, что это сообщение - JSON-строка, поэтому прежде чем работать с ней, ее надо десериализовать.
 
-3. Check out the Ruby code in `server/server.rb` to see what you're connecting to with that string.
+3. Откройте `server/server.rb`, чтобы понять, к чему мы подключаемся.
 
-4. Modify the `handleMessage` function to parse the JSON string. If your browser does not have a native JSON implementation, you'll need to add the script `js/libs/json2.js` to your project for this code to work.
+4. Измените функцию `handleMessage`, добавив разбор JSON-строки. Если ваш браузер не имеет встроенной поддержки JSON, подключите к проекту скрипт `js/libs/json2.js`.
 
     <pre>var msg = JSON.parse(event.data);
     console.info(msg);</pre>
 
-5. Reload your browser, wait 10 seconds, then check your console. You should see the de-marshalled JSON object displayed.
+5. Обновите страницу, подождите 10 секунд и проверьте консоль. Вы должны увидеть десериализованный JSON-объект.
 
-6. Modify your `move` function to send a JavaScript object out on the websocket every time you move your character. Use the websocket.send method like this:
+6. Измените функцию `move`, добавив в нее оправку JavaScript-объекта в websocket каждый раз при перемещении персонажа. Воспользуйтесь методом `websocket.send`:
 
     <pre>ws.send(JSON.stringify({ name: name, x: x, y: y, type: "move" }));</pre>
 
-7. Check out the server log being tailed on the screen. You should see your movement messages showing up every time you push a key.
+7. Посмотрите логи сервера, выводимые на экран. Каждый раз при нажатии клавиши перемещения в логе должны появляется сообщения о перемещении персонажа.
 
-If you are thinking of building an app with websockets, definitely check out [Pusher](http://pusherapp.com/) which may save you the trouble of writing your own server.
+Если вы подумываете о создании приложения с использованием websocket, обязательно посмотрите проект [Pusher](http://pusherapp.com/). Возможно, вам не придется писать собственный сервер.
 
-## Extra Credit
+## Дополнительное задание
 
-The server is broadcasting all movement events to the whole class. To display other student positions on your screen, you'll need to keep track of their usernames and x and y positions (probably
-with a hash, where the keys are user names and the values are coordinates).  Modify your handleMessage message to display multiple players, displaying a different image for your own sprite vs.
-other users. 
+Сервер передает события передвижения всему классу *(практикум проводился на конференции, компьютеры студентов были объединены в сеть - прим. пер.)*. Чтобы отобразить перемещения других студентов на экране, нужно отследить их имена и координаты x и y (реализовать это лучше с помощью кэша, ключами которого будут имена пользователей, а значениями - координаты). Измените вывод `handleMessage` так, чтобы он давал информацию о нескольких игроках, показывая другую картинку для чужих персонажей. 
 
-Also, we're not doing anything to ensure uniqueness of usernames, so make sure you pick a name that won't collide with anyone else's name.
+Мы не проверяем имена пользователей на уникальность, поэтому постарайтесь сразу договориться с другими студентами о разных именах.
 
 # EXERCISE 9
 ## Embedded Media (and Data Attributes)

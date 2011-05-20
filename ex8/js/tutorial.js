@@ -7,11 +7,11 @@ characters.src = "media/characters.gif";
 var ws = new WebSocket("ws://exp.subelsky.com:8011");
 
 ws.onopen = function() {
-  console.info("socket opened");
+  console.info("socket открыт");
 };
 
 ws.onclose = function() {
-  console.info("socket closed");
+  console.info("socket закрыт");
 };
 
 ws.onerror = function(a,b) {
