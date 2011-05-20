@@ -305,38 +305,35 @@
 
 Мы не проверяем имена пользователей на уникальность, поэтому постарайтесь сразу договориться с другими студентами о разных именах.
 
-# EXERCISE 9
-## Embedded Media (and Data Attributes)
+# УПРАЖНЕНИЕ 9
+## Работа с мультимедия (и пользовательскими аттрибутами)
 
-Let's add some sound effects to our game and take advantage of HTML5's data attributes to simplify our controls.
+Добавим в игру звуковые эффекты и воспользуемся пользовательскими аттрибутами HTML5 для упрощения управления.
 
-1. Add this list element to your `index.html` body:
+1. Добавьте в тело `index.html` такой список:
 
         <ul>
-          <li><a href="#" data-soundname='bubble'>Play Bubble</a></li>
-          <li><a href="#" data-soundname='ray_gun'>Play Ray Gun</a></li>
+          <li><a href="#" data-soundname='bubble'>Бульк</a></li>
+          <li><a href="#" data-soundname='ray_gun'>Пыщь</a></li>
         </ul>
 
-2. Use jQuery to bind the `<a>` tag's `click` event. You can figure out which soundname the user wants by inspecting the click event's data attribute, as below. I've
-included the cross-browser version as well as the version provided for in the [HTML5 spec](http://dev.w3.org/html5/spec/elements.html#embedding-custom-non-visible-data), which only Chrome seems to support.
+2. С помощью jQuery добавьте обработчик события `click` для тэга `<a>`. Определить, какой звук требуется проиграть, можно спомощью значения пользовательского аттрибута события, как это показано ниже. Здесь я использовал кросс-браузерное решение, а также вариант, предложенный в [спецификации HTML5](http://dev.w3.org/html5/spec/elements.html#embedding-custom-non-visible-data), который, похоже, поддерживает только Chrome.
 
         $('a').click(function(evt) {
-          // this spec version is not as pretty but works across browsers
+          // не слишком элегантно, зато работает во всех браузерах
           $('#'+evt.target.getAttribute('data-soundname'))[0].play();
 
-          // the HTML5 spec provides a nicer API, but this version only seems to work in Chrome
+          // спецификация HTML5 предлагает изящный API, но работает это, по-видимому, только в Chrome
           // $('#'+evt.target.dataset.soundname)[0].play();
         });
 
-    Note that data attributes are different from micro-data, because they are not intended for external consumption.  See [Dive Into HTML5](http://diveintohtml5.org/extensibility.html) for more details about microdata.
+    Не стоит путать пользовательские аттрибуты с микро-данными - они не предназначены для внешней обработки.  Подробне о микроданных можно почитать в [Dive Into HTML5](http://diveintohtml5.org/extensibility.html).
 
-3. Reload the page. Click each link to verify that you can read the `dataset` property and are getting the correct soundname.
+3. Обновите страницу. Щелкните каждую ссылку, чтобы убедиться, что свойство `dataset` доступно и получает нужное значение.
 
-4. Playing audio and video in HTML5 involves a lot of codec hassles. You usually have to provide your content in multiple formats. To make things simple, I've included these two 
-sound files in four different formats. Copy the sound files from the `media` directory to your project. If you are serving these files through a web server (and not viewing them via a file:// URL), you may have 
-to fiddle with your MIME settings because HTML5 will choke if your audio files aren't served with the proper MIME type. See [MIME Types](http://diveintohtml5.org/video.html#video-mime-types) for details.
+4. Воспроизведение звука и видео в HTML5 подразумевает возню с кодеками. Обычно контект доступен в нескольких форматах. Я добавил звуковые файлы в четырех разных форматах. Скопируйте звуковые файлы из папки `media` в ваш проект. Если вы отдаете эти файлы с сервера (а не через file://), возможно, вам придется повозиться в MIME, так как HTML5 не будет воспроизводить файлы, отданные с неверным MIME типом. Подробнее см. [MIME Types](http://diveintohtml5.org/video.html#video-mime-types).
 
-    The following audio embed should work for most people, though. The spec says that the browser should pick the first listed source that it can play.
+    Следующий код должен работать для большинства пользователей. Спецификация предприсывает браузеру воспроизводить первый источник, который он способен воспроизвести.
 
         <div style="display:hidden">
           <audio id="bubble" preload>
@@ -352,25 +349,25 @@ to fiddle with your MIME settings because HTML5 will choke if your audio files a
           </audio>
         </div>
 
-    I chose to embed these directly on the page so we could take advantage of the browser's content fallback selection. You can also create audio objects just like we did with Image objects earlier:
+    Я решил добавить звуковые файлы прямо в страницу. В этом случае, если HTML5-аудио не сработает, браузер обработает их как обычно. А вообще аудио-объекты можно создавать также, как и картинки:
 
         var audio = new Audio;
         audio.src = "http://...";
 
-5. Reload your page, then try playing both sounds at the console:
+5. Обновите страницу. Попробуйте проиграть оба файла в консоли:
 
     <pre>$('#bubble')[0].play()
     $('#ray_gun')[0].play()</pre>
 
-6. Modify your anchor click event handler to automatically play the requested sound using the above technique.
+6. Измените ссылку так, чтобы указанные файлы воспроизводились автоматически. Воспользуйтесь кодом из предыдущего шага.
 
-7. To see what basic HTML5 audio controls look like, remove `display:hidden` from the `<div>` and add the `controls` attribute next to `preload`, then reload the page.
+7. Чтобы посмотреть, как выглядят элементы управления звуком по умолчанию, уберите стиль `display:hidden` для `<div>` и добавьте аттрибут `controls` после `preload`. Обновите страницу.
 
-8. Video embedding works the same way. We need to provide multiple versions of video files to ensure compatibility across modern browsers.  Copy the files `short.mov`, `short.mp4`, `short.ogv`, and `short.webm` from the `media` directory to your project's `media` directory.
+8. Вставка видео происходит также. Для обеспечения совместимости придется предоставить несколько форматов видео.  Скопируйте файлы `short.mov`, `short.mp4`, `short.ogv` и `short.webm` из папки `media` в папку `media` вашего проекта.
 
-    These files were created from a QuickTime movie using `ffmpeg2theora`, `ffmpeg` and `HandBrakeCLI`, using settings from [Dive Into HTML5](http://diveintohtml5.org/video.html).
+    Видео было сконвертировано из файла QuickTime с помощью `ffmpeg2theora`, `ffmpeg` и `HandBrakeCLI`. Настройки конвертации были подсмотрены в [Dive Into HTML5](http://diveintohtml5.org/video.html).
 
-9. Add this to the bottom of your `index.html` page:
+9. Добавьте в конец `index.html`:
 
           <video width="320" height="240" preload controls>
             <source src="media/short.ogg" type='video/ogg; codecs="theora, vorbis"' />
@@ -378,15 +375,13 @@ to fiddle with your MIME settings because HTML5 will choke if your audio files a
             <source src="media/short.mov" />
           </video>
 
-10. Reload the page. One of those four formats should display in your browser.
+10. Обновите страницу. Один из видеофайлов должен отобразиться в вашем браузере.
 
-    For a cool example of how to use the canvas to manipulate images from a video, check out [this demo](http://html5demos.com/video-canvas). There's also a good demonstration of using embedded media events to show a timer
-    in [this demo](http://html5demos.com/video).
+    Потрясающий пример использования canvas для манипулирования изображением из видео можно найти [здесь](http://html5demos.com/video-canvas). В этом [this demo](http://html5demos.com/video) показано использование событий вставленного медиаконтента для отображения таймера.
 
-## Extra Credit
+## Дополнительное задание
 
-Use the [FlowPlayer](http://flowplayer.org/) Flash-based video player as the ultimate fallback for this content (you'll need to embed a `<object>` tag after the `<source>` tags. The technique is explained
-at [Video for Everybody](http://camendesign.com/code/video_for_everybody).
+Если воспроизведение мультимедия на поддерживается браузером, воспользуйтесь флеш-плеером [FlowPlayer](http://flowplayer.org/) (для этого нужно добавить тэг `<object>` после тэгов `<source>`. Подробно эта техника освещена в статье [Video for Everybody](http://camendesign.com/code/video_for_everybody).
 
 # EXERCISE TEN
 ## Geolocation
