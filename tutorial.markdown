@@ -54,34 +54,34 @@
 Используя только CSS и HTML и полагаясь на классы `touch` и `no-touch` элемента `<HEAD>`, выведите соотвествующее сообщение о том, поддерживает ли устройство пользователя тач-интерфейс. Если у вас установлен симулятор мобильной ОС (например, iOS Simulator), проверьте оба случая.
 
 # УПРАЖНЕНИЕ 2 
-## Basic Canvas Drawing
+## Основы рисования на canvas
 
-1. Add `<canvas id="main" width="400" height="400"></canvas>` just after the opening of the `<body>` tag in your `index.html` file.
+1. Добавьте тэг `<canvas id="main" width="400" height="400"></canvas>` сразу после открывающего тэга `<body>` в файле `index.html`.
 
-2. To draw a rectangle in the canvas, add this code to js/tutorial.js:
+2. Чтобы нарисовать на canvas прямоугольник, добавьте в js/tutorial.js следующий код:
     <pre>var canvas = document.getElementById("main");
     var context = canvas.getContext("2d");
     context.fillRect(0,0,20,20);</pre>
 
-    All drawing operations happen on the canvas context, not the canvas itself. Right now "2d" is the only available context, but a future HTML spec may define a 3d context.
+    Рисование на canvas осуществляется в контексте canvas, а не на самом объекте canvas. В настоящее время доступен только контектс "2d". В будущем возможно появление 3D-контекста.
 
-3. Open `index.html` in your browser. You should see a black rectangle!
+3. Откройте `index.html` в браузере. Вы должны увидеть черный прямоугольник.
 
-4. Change the `fillRect` call to `strokeRect` and reload your browser. Now the rectangle is not filled-in.
+4. Вместо `fillRect` вызовите `strokeRect` и обновите страницу в браузере. Теперь прямоугольник не закрашен.
 
-5. Set the context's `fillStyle` property to a CSS color like "red", then reload the page to see a red rectangle.
+5. Задайте свойству `fillStyle` контекста какой-нибудь цвет CSS, например, красный - "red", затем обновите страницу. Вы увидите красный прямоугольник.
 
     <pre>context.fillStyle = "red";</pre>
 
-6. To draw text, add lines like this to `tutorial.js` and reload.
+6. Чтобы отобразить текст, добавьте в `tutorial.js` следующий код и обновите страницу.
 
     <pre>context.font = "bold 24px sans-serif";
     context.fillStyle = "blue";
     context.fillText("HTML5",100,100);</pre>
 
-## Extra Credit
+## Дополнительное задание
 
-Try filling your rectangle with a gradient. You'll need to create a gradient object as explained in [Dive Into HTML5](http://diveintohtml5.org/canvas.html#gradients), then set your fillStyle to that gradient.
+Попробуйте залить прямоугольник градиентом. Для этого сначала вам нужно создать градиент (что объяснено здесь: [Dive Into HTML5](http://diveintohtml5.org/canvas.html#gradients)), а затем установить этот градиент значением свойства fillStyle.
 
 # EXERCISE THREE
 ## Canvas Image Manipulation
