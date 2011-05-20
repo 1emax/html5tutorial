@@ -16,28 +16,28 @@ class TutorialServer
   end
 
   def run
-    @logger.info "Starting server"
+    @logger.info "Запускаю сервер"
 
     EventMachine.run do
-      @logger.info "Listening on #{@host}:#{@port}"
+      @logger.info "Слушаю #{@host}:#{@port}"
 
       EventMachine::WebSocket.start(:host => @host, :port => @port) do |socket|
         socket.onopen do
-          @logger.debug "socket #{socket.object_id} opened"
+          @logger.debug "сокет #{socket.object_id} открыт"
           @sockets[socket] = 1
         end
 
         socket.onmessage do |msg|
-          @logger.info "received: #{msg}"
+          @logger.info "получено: #{msg}"
           broadcast(msg)
         end
 
         socket.onerror do |s|
-          @logger.debug "error: #{s.inspect} #{s.backtrace}"
+          @logger.debug "ошибка: #{s.inspect} #{s.backtrace}"
         end
 
         socket.onclose do
-          @logger.debug "socket #{socket.object_id} closed"
+          @logger.debug "сокет #{socket.object_id} закрыт"
           @sockets.delete(socket)
         end
       end
