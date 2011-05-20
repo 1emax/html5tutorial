@@ -2,7 +2,7 @@
 
 # ЗАДАЧИ
 
-Цель этого учебника - показать вам, какие новые возможности могут быть использованы в современных веб-приложениях без участия дополнительных зависимостей и противоречий с уже существующим кодом. Курс рассчитан на то, чтобы дать вам достаточно знаний для самостоятельного использования новых возможностей в своих приложениях.
+Цель этого практикума - показать, как новые возможности HTML5 могут быть использованы в современных веб-приложениях без участия дополнительных зависимостей и противоречий с уже существующим кодом. Курс рассчитан на то, чтобы дать вам достаточно знаний для самостоятельного использования новых возможностей в своих приложениях.
 
 # ПРЕДВАРИТЕЛЬНЫЕ ТРЕБОВАНИЯ
 
@@ -15,9 +15,9 @@
 
 # УСТАНОВКА
 
-1. Скопируйте директорию `start` из этого проекта в какое-нибудь другое место. Эта директория содержит все необходимые зависимости и послужит основой для игры, которую мы будем делать.
+1. Скопируйте папку `start` из этого проекта в какое-нибудь другое место. Эта папка содержит все необходимые зависимости и послужит основой для игры, которую мы будем делать.
 
-2. Изучите файл index.html в скопированной директории `start`. Он представляет собой упрощенный шаблон, основанный на [HTML5 Boilerplate project](http://html5boilerplate.com/). Здесь вы можете найти [полный шаблон](https://github.com/paulirish/html5-boilerplate/blob/master/index.html). Это отличный способ изучить особенности HTML5.
+2. Изучите файл index.html в скопированной директории `start`. Он представляет собой упрощенный шаблон, основанный на [HTML5 Boilerplate](http://html5boilerplate.com/). Здесь вы можете найти [полный шаблон](https://github.com/paulirish/html5-boilerplate/blob/master/index.html). Это отличный способ изучить особенности HTML5.
 
     Обратите внимание на DOCTYPE, с которого начинается этот файл. Это все, что нужно, чтобы указать браузеру, что вы используете последнюю, самую современную версию HTML.
     Кроме того, в шаблоне используются новые семантические тэги `<header>` и `<footer>`. Их можно использовать вместо менее семантической разметки вроде `<div id="header"></div>`.
@@ -83,12 +83,12 @@
 
 Попробуйте залить прямоугольник градиентом. Для этого сначала вам нужно создать градиент (что объяснено здесь: [Dive Into HTML5](http://diveintohtml5.org/canvas.html#gradients)), а затем установить этот градиент значением свойства fillStyle.
 
-# EXERCISE THREE
-## Canvas Image Manipulation
+# УПРАЖНЕНИЕ 3
+## Работа с изображениями на canvas
 
-1. Copy the file `media/water.jpg` from the tutorial project to your project's `media` directory. (This image is [Creative Commons-licensed](http://www.flickr.com/photos/50183640@N05/5616041841/))
+1. Скопируйте файл `media/water.jpg` из папки `media` практикума в папку `media` вашего проекта. (Это изображение распростряняется на условиях лицензии [Creative Commons-licensed](http://www.flickr.com/photos/50183640@N05/5616041841/))
 
-2. Draw this image using the canvas by adding these lines to your `tutorial.js` file:
+2. Выведите это изображение на canvas, добавив следующий код в `tutorial.js`:
 
     <pre>var img = new Image();
     img.src = "media/water.jpg";
@@ -96,42 +96,42 @@
       context.drawImage(img,0,110);
     };</pre>
 
-3. Reload your browser to see the image.
+3. Обновите страницу в браузере, чтобы увидеть картинку.
 
-4. Now add two additional parameters, a destination width and height, after the original 3 parameters:
+4. Добавьте два дополнительных параметра после 3 уже имеющихся, ширину и высоту области вывода для картинки:
 
     <pre>context.drawImage(img,0,110,200,100);</pre>
 
-5. Reload the browser and observe the image scaled to a different size.
+5. Обновите страницу. Размер картинки будет другим.
 
-6. Copy the sprite file we'll be using for our simple game, `media/characters.jpg` to the `media` folder of your project. (I got this CC-licensed file by David E. Gervais from the [TomeTik](http://pousse.rapiere.free.fr/tome/) project)
+6. Для нашей простой игры нам понадобится файл со спрайтами `media/characters.gif`. Скопируйте его в папку `media` вашего проекта. (Я получил этот файл, лицензированный на условиях CC, от David E. Gervais, участника проекта [TomeTik](http://pousse.rapiere.free.fr/tome/))
 
-7. Use the 9 argument version of drawImage to slice out one character from the characters file and project it onto the canvas:
+7. Чтобы вырезать одного персонажа из файла и отобразить его на canvas, вам придется вызвать `drawImage` с 9 аргументами:
 
     <pre>drawImage(image,sx,sy,sw,sh,dx,dy,dw,dh);</pre>
 
-    The 9 arguments are explained in this image:
+    Назначение каждого из этих агрументов объяснено на картинке:
     ![drawImage arguments](http://images.whatwg.org/drawImage.png)
 
-    Each sprite is 32 pixels wide and 32 pixels high.  So if you want to slice out the 2nd character in the top row, with the red hood, you would start with these parameters:
+    Каждый спрайт имеет ширину и высоту в 32 пикселя. Таким образом, если вы хотите вырезать второго персонажа в верхнем ряду, да-да, этого, в красном капюшоне, вам нужно вызвать `drawImage` с такими параметрами:
 
     * sx = 33
     * sy = 0
     * sw = 32
     * sh = 32
 
-    Choose dx, dy, dw, and dh to your taste, then reload the browser. Consult the solution in `ex3` if you get confused.
+    Добавьте dx, dy, dw и dh по вкусу, затем обновите страницу. Если что-то не получается, посмотрите решение в папке `ex3`.
 
-# EXERCISE FOUR
-## Basic Animation
+# УПРАЖНЕНИЕ 4
+## Простая анимация
 
-1. Copy `js/libs/jquery-1.5.2.js` to the `js/libs` directory in your project. We'll be using jQuery to bind keyboard events and to perform other tasks.
+1. Скопируйте `js/libs/jquery-1.5.2.js` в папку `js/libs` вашего проекта. jQuery понадобится нам для обработки событий клавиатуры и некоторых других задач.
 
-2. Add a this tag to the bottom of your index.html file, before the `tutorial.js` file is loaded, to load the jQuery library:
+2. Чтобы подключить jQuery, добавьте следующий тэг в конец файла index.html, перед загрузкой файла `tutorial.js`:
 
     `<script src="js/libs/jquery-1.5.2.js"></script>`
 
-3. Comment out most of the drawing code we had been working with so the page starts clean.  The only working code in your `tutorial.js` should look like this:
+3. Закомментируйте большую часть кода, отвечающего за рисование. В этом упражнении мы начнем с чистого листа. Оставшийся в `tutorial.js` код должен выглядеть примерно так:
 
     <pre>var canvas = document.getElementById("main");
     var context = canvas.getContext("2d");
@@ -139,52 +139,49 @@
     var characters = new Image();
     characters.src = "media/characters.gif";</pre>
 
-4. Initialize two variables, `x` and `y`, to zero. We'll use these to keep track of the user's current position.
+4. Задайте значения переменных `x` и `y` равными нулю. В этих переменных будет храниться текущая позиция игрока.
 
-5. Initialize variables to store the height and width of the canvas. Later we'll be changing the size of the canvas dynamically so it makes sense to not hard code these values.
+5. Задайте переменные для хранения ширины и высоты canvas. В дальнейшем мы будем менять размеры canvas динамически, поэтому имеет смысл не задавать эти переменные константами.
 
      <pre>var height = $(canvas).height();</pre>
-     <pre>var width = $(canvas).width();</pre>
+     <pre>var width = $(canvas).width();</pre>
 
-5. Setup another onload function for the characters object. When the characters image has loaded, we want to bind keyboard events to a function we'll write next:
+5. Задайте обработчик для обработки события `onload` объекта `characters`. После загрузки изображения персонажа клавиатурные события будут обрабатываться функцией, которую мы напишем на следующем шаге:
 
     <pre>$(window).keyup(move);</pre>
 
-6. Write a move function that updates the character position on screen based on which arrow key was pressed.  Using the binding from the above step, your move function should 
-accept one argument passed by jQuery: an event object. That object has a "which" property containing the code for the key that was pressed.
+6. Напишите функцию `move`, которая изменяет позицию персонажа на экране в зависимости от нажатой кнопки. На предыдущем шаге мы задали обрабочик клавиатурных событий. Этот обработчик должен принимать объект `event`, передаваемый jQuery. Этот объект имеет свойство `which`, указывающий на то, какая клавиша была нажата.
 
-    The key codes are:
+    Коды клавиш:
 
-    * Up = 38
-    * Down = 40
-    * Left = 37
-    * Right = 39
+    * Вверх = 38
+    * Вниз = 40
+    * Влево = 37
+    * Вправо = 39
 
-    Increment or decrement x or y by 10, depending on which key was pressed. Be sure to guard against x or y going out of bounds (less than zero or greater than the canvas size).
+    Увеличивайте значение `x` или `y` на 10, в зависимости от того, какая клавиша была нажата. Проверяйте значения `x` и `y` на предмет выхода за границы canvas (значения не должны быть меньше нуля или больше размеров canvas).
 
-    If you get confused check out `ex4/js/tutorial.js` for an example move function.
+    Если вы запутались, посмотрите как реализована эта функция в файле `ex4/js/tutorial.js`.
 
-7. At the end of your move function, call `context.drawImage` to slice out one of the sprites from our file and project it on the screen at the coordinates stored
-in x and y.
+7. В конце тела функции `move` вызовите `context.drawImage`, чтобы вырезать изображение из файла со спрайтами и отобразить его на canvas в координатах, заданных `x` и `y`.
 
-    If you get confused check out `ex4/js/tutorial.js` to see what this looks like.
+    Если вы запутались, посмотрите, как это сделано в файле `ex4/js/tutorial.js`.
 
-8. Reload your browser and try it out. You should see your character tracking across the screen slowly.
+8. Обновите страницу и опробуйте анимацию. Персонаж должен неторопливо перемещаться по экрану при нажатии на клавиши со стрелками.
 
-9. Let's make this look nicer by clearing the screen before each draw command.  Add this before your drawImage call:
+9. Персонаж оставляет за собой некрасивый след. Исправить это можно путем очистки экрана перед каждым выводом персонажа. Добавьте следующий код перед вызовом `drawImage`:
 
     <pre>context.clearRect(0,0,width,height);</pre>
 
-10. You may also want to increase the number of pixels that the character travels per key press.
+10. Если хотите, заставьте персонажа перемещаться на большее расстояние при каждом нажатии клавиши.
 
-## Extra Credit
+## Дополнительное задание
 
-Try setting up an animation loop that redraws the screen a few times per second. This will let you decouple the keyboard events from the drawing. You'll need something like this
-to start your loop:
+Попробуйте создать цикл анимации, который осуществлял бы вывод на экран несколько раз в секунду. Это поможет отделить обработку событий клавиатуры от отображения. Для запуска цикла вам понадобится что-то вроде:
 
 `setInterval(runLoopFunction,interval);`
 
-Where runLoopFunction is the name of your function and interval is the number of milliseconds the browser should wait in between calls to that function.
+Где `runLoopFunction` - имя вашей функции, а `interval` - количество миллисекунд, которые браузер должен выдерживать между вызовами функции.
 
 # EXERCISE FIVE
 ## Fun With Forms
