@@ -249,10 +249,10 @@
 
 2. Что произойдет, если попытаться обратиться к элементу, которые не был сохранен в хранилище?
 
-# EXERCISE 7
-## Canvas Cleanup
+# УПРАЖНЕНИЕ 7
+## Очистка canvas
 
-1. Let's make things a little nicer before we add multi-player features to this "game". First, let's set a dark background for our canvas. Add this declaration to the `<head>` section of `index.html`:
+1. Прежде, чем добавить в нашу "игру" возможности мультиплеера, поработаем над ее внешним видом. Установим для canvas темный фон. Добавьте этот код в тэг `<head>` файла `index.html`:
 
         <style>
           canvas { 
@@ -262,9 +262,9 @@
           input { display: block; }
         </style>
 
-2. You may also want to increase the width and height of your canvas element.
+2. Если хотите, можно увеличить ширину и высоту canvas.
 
-3. Increase the step size for your character so it moves 5 or 10 pixels at a time.
+3. Увеличьте скорость перемещения персонажа так, чтобы он перемещался на 5 или 10 пикселей на одно нажатие клавиши.
 
 # EXERCISE 8
 ## Web Sockets
