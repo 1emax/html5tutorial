@@ -210,46 +210,44 @@
 
 Попробуйте использовать другие элементы формы, описанные в книге [Dive Into HTML5](http://diveintohtml5.org/forms.html). В HTMl5 есть даже элемент для выбора цвета!
 
-# EXERCISE SIX
-## Local Storage
+# УПРАЖНЕНИЕ 6
+## Локальное хранилище
 
-**Note**: this exercise will not work well in Firefox because of a bug in the way Firefox handles file:// URLs. If you want this to work in Firefox you'll need to serve up your code from a web server
-on your development machine. [Details](https://bugzilla.mozilla.org/show_bug.cgi?id=507361)
+**Примечание**: Это упражнение работает некорректно в Firefox из-за бага в обработке ссылок file://. Если вы хотите, чтобы все заработало и в Firefox, придется отдавать веб-страницу с сервера. [Подробности](https://bugzilla.mozilla.org/show_bug.cgi?id=507361)
 
-1. At your JavaScript console, set a localStorage value:
+1. Сохраните значение в локальном хранилище из консоли JavaScript:
 
     <pre>localStorage.setItem('shaz','bot')</pre>
 
-2. Close the page completely, then reopen it in a new window and type this at your JavaScript console:
+2. Закройте страницу, затем откройте ее в новом окне и введите в консоли JavaScript такую команду:
 
     <pre>localStorage.getItem('shaz')</pre>
 
-    If your browser supports localStorage, you should get the value of `shaz` back.
+    Если ваш браузер поддерживает локальные хранилища, функция должна вернуть значение `shaz`.
 
-3. Try the above steps with the sessionStorage object. How does sessionStorage differ from localStorage?  What about when you merely reload a page?  Do they perform in the same way?
+3. Попробуйте проделать то же самое с объектом `sessionStorage`. Чем `sessionStorage` отличается от `localStorage`? Что происходит, если вы просто обновляете страницу? Одинаково ли ведут себя объекты?
 
-4. Call `localStorage.clear()` and try getting the 'shaz' item again.
+4. Вызовите `localStorage.clear()` и попробуйте еще раз найти элемент 'shaz'.
 
-5. Bind a new function to the change event of the username input field we added in exercise 5, like this:
+5. Добавьте обработчик события `change` для поля ввода имени пользователя, которое мы создали в упражнении 5:
 
     <pre>$('#username').change(function() { ... });</pre>
 
-6. In that bound function, use localStorage to store the user's name. You may need to change the focus by clicking elsewhere on the page to get this event to fire.  To fetch the value of the username field, use `$("#username").val()`.
+6. В обработчике сохраните имя пользователя с помощью `localStorage`. Чтобы вызвать событие `change` вам, возможно, нужно будет снять фокус с поля ввода.  Чтобы получить значение поля ввода, используйте `$("#username").val()`.
 
-7. Add a line of code to `tutorial.js` to fetch the user's name from localStorage (which you stored in the above step) when the page loads. If there is a previously-stored username, set the value of the username field
-to the pre-stored field like this: `$("#username").val(nameStr)`.
+7. Добавьте в `tutorial.js` код для получения имени пользователя из `localStorage` (которое мы сохранили на предыдущем шаге) при загрузке страницы. Если имя пользователя найдено в хранилище, восстановите ранее сохраненное имя пользователя в поле ввода, например так: `$("#username").val(nameStr)`.
 
-8. Reload the page. Type in a username, tab away from the username field (to make sure the change event fires), then reload the page. Your username should already be filled-in, instead of the placerholder text.
+8. Обновите страницу. Введите имя пользователя, снимите фокус с поля (чтобы убедиться, что событие `change` вызвано), затем снова обновите страницу. На этот раз поле ввода должно содержать имя пользователя вместо текста по умолчанию.
 
-9. Try setting and getting numbers and hashes in localStorage. Does localStorage preserve type?
+9. Попробуйте сохранять и извлекать из локального хранилища числа и хэши. Сохраняет ли локальное хранилище тип?
 
-*Your JavaScript console may also have an inspector for local and session storage. In WebKit's inspector, it's Storage tab.*
+*Консоль JavaScript может обладать функцией просмотра локального хранилища и хранилища сессии. В инструменте для разработчиков движка WebKit содержимое хранилищ можно посмотреть на соответствующей вкладке.*
 
-## Extra Credit
+## Дополнительное задание
 
-1. Bind the window object's `storage` event to keep track of when new items are added to localStorage. See [Dive Into HTML5](http://diveintohtml5.org/storage.html#storage-event) if you get stuck.
+1. Добавьте к объекту `window` обработчик события `storage`, чтобы отслеживать добавление новых элементов в локальное хранилище. Если не знаете, с чего начать, начните отсюда: [Dive Into HTML5](http://diveintohtml5.org/storage.html#storage-event).
 
-2. What happens when you try to get an item that has not been previously set from localStorage?
+2. Что произойдет, если попытаться обратиться к элементу, которые не был сохранен в хранилище?
 
 # EXERCISE 7
 ## Canvas Cleanup
