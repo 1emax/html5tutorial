@@ -183,32 +183,32 @@
 
 Где `runLoopFunction` - имя вашей функции, а `interval` - количество миллисекунд, которые браузер должен выдерживать между вызовами функции.
 
-# EXERCISE FIVE
-## Fun With Forms
+# УПРАЖНЕНИЕ 5
+## Работает с формами
 
-1. When we link this game up with other players we want to know who's who. So let's add a username field that takes advantage of new HTML5 form features. Add this line to your `index.html` file:
+1. Если мы сделаем нашу игру многопользовательской, нам нужно будет знать, как зовут игроков. Давайте добавим поле, которое принимает имя пользователя и использует новые возможности HTML5. Добавьте в файл `index.html` следующую строку:
 
-    `<input id="username" placeholder="Your name">`
+    `<input id="username" placeholder="Ваше имя">`
    
-2. Reload the page. If you don't see any placerholder text, check the value of `Modernizr.input.placeholder` in your JavaScript console.
+2. Обновите страницу. Если вы не видите текста "Ваше имя" в поле, проверьте значение `Modernizr.input.placeholder` в консоли JavaScript.
 
-3. Now add the `autofocus` attribute to that input field and reload. If your browser supports it, the field will automatically receive the focus. 
+3. Добавьте к полю ввода аттрибут `autofocus` и обновите страницу. Если браузер поддерживает такую возможность, поле автоматически получит фокус. 
 
-4. Let's try out a new form element, a slider we can use to control the size of our character. Add this to your `index.html` file (1):
+4. Опробуем в деле новый элемент формы, ползунок, с помощью которого мы можем изменять размеры персонажа. Добавьте в `index.html` следующий код (1):
 
     `<input id="size" type="range" min="4" max="320" step="8" value="32">`
 
-5. Bind changes to that slider to a function in `tutorial.js` that will control the destination width and height of your drawImage call. The binding should look like this:
+5. Добавьте обработчик событий ползунка в файл `tutorial.js`. Обработчик должен изменять размер изображения, выводимого вызовом `drawImage`. Задать обработчик можно так:
 
     `$('#size').change(function() { ... });`
 
-    To get the value of the slider, use `$('#size').val()`
+    Получить значение ползунка можно с помощью `$('#size').val()`
 
-(1) This element does not render in Firefox. Try it out in Safari or Chrome.
+(1) Firefox не отображает этот элемент. Выполните задание в Safari или Chrome.
 
-## Extra Credit
+## Дополнительное задание
 
-Try out some of the other input elements listed in the [Dive Into HTML5 book](http://diveintohtml5.org/forms.html), like the color picker!
+Попробуйте использовать другие элементы формы, описанные в книге [Dive Into HTML5](http://diveintohtml5.org/forms.html). В HTMl5 есть даже элемент для выбора цвета!
 
 # EXERCISE SIX
 ## Local Storage
