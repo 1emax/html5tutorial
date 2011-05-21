@@ -12,7 +12,7 @@ function factorizer(num) {
 		}
 	}
 
-  return "factors of " + num + " are " + factors.join(", ");
+  return "множители " + num + " - " + factors.join(", ");
 }
 
 self.addEventListener('message', function(e) {

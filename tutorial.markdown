@@ -383,30 +383,28 @@
 
 Если воспроизведение мультимедия на поддерживается браузером, воспользуйтесь флеш-плеером [FlowPlayer](http://flowplayer.org/) (для этого нужно добавить тэг `<object>` после тэгов `<source>`. Подробно эта техника освещена в статье [Video for Everybody](http://camendesign.com/code/video_for_everybody).
 
-# EXERCISE TEN
-## Geolocation
+# УПРАЖНЕНИЕ 10
+## Геолокация
 
-1. At the JavaScript console, type the following command:
+1. Введите эту команду в консоль JavaScript:
 
     <pre>navigator.geolocation.getCurrentPosition(function(loc) { console.info(loc.coords) }, function(err) { console.error(err) })</pre>
 
-2. Inspect the location object in the console. If you lookup those coordinates in Google Maps you should get a result fairly close to the convention center! It's very easy to integrate this info
-with Google Maps to show a map at the user's location, but unfortunately this can't be done from localhost due to Google Maps API authentication issues. 
-[This link](http://html5demos.com/geo) has a simple demo - be sure to view source on the page.
+2. Посмотрите на объект локации в консоле. Если поискать эти координаты на Google Maps, то результат окажется довольно точным! Интегрировать геолокацию с Google Maps очень легко, и это позволит показывать положение пользователя на карте. К сожалению, из особенностей аутентификации Google Maps API сделать это с localhost не получится. 
+[Здесь](http://html5demos.com/geo) расположено простое демо - обязательно изучите исходный код страницы.
 
-    The first callback gets fired if the browser can guess its location. The second callback fires if it can't. For me, the second callback fired in
-    Safari when I ran it on a machine with an Ethernet connection.
+    Первая функция обратного вызова вызывается, если браузер может определить свое положения, вторая - если не может. На моей машине вторая функция вызывается в Safari, если компьютер подключен к сети через Ethernet.
 
-## Extra Credit
+## Дополнительное задание
 
-Check out [SimpleGeo](https://simplegeo.com/docs/tutorials/javascript) for some examples of other cool things you can do when you know a user's approximate location.
+Посмотрите на [SimpleGeo](https://simplegeo.com/docs/tutorials/javascript) примеры того, что можно сделать, если знать примерные координаты пользователя.
 
-# EXERCISE ELEVEN
+# УПРАЖНЕНИЕ 11
 ## Web Workers
 
-1. Examine the file `js/worker.js` and then copy it to your project. This is a simple brute-force algorithm to find all the factors of a given integer.
+1. Изучите файл `js/worker.js` и скопируйте его в свой проект. Это простой алгоритм перебора, призванный найти все множители данного целого числа.
 
-2. Reload the page, then type these lines at your JavaScript console:
+2. Обновите страницу и введите в консоль JavaScript следующие команды:
 
     <pre>var worker = new Worker('js/worker.js');
 
@@ -416,12 +414,12 @@ Check out [SimpleGeo](https://simplegeo.com/docs/tutorials/javascript) for some 
 
     worker.postMessage(100);</pre>
 
-    **If you are using Chrome**, you will get a security exception if you are loading index.html as a file:// URI. You can reopen Chrome with a command-line flag to circumvent the exception, though.
-    This is what worked for me on OS X:
+    **Если вы используете Chrome**, при открытии `index.html` как file:// будет вызвано исключение безопасности. Отключить его можно, запустив Chrome из консоли с особым ключом.
+    На OS X это выглядит так:
 
     <pre>open -n -a 'Google Chrome.app' --args --allow-file-access-from-files</pre>
 
-    Or just use a different browser.
+    А можно просто воспользоваться другим браузером.
 
 3. You should see the worker immediately post a response to the console. Try increasing the size of the number you pass to worker.postMessage until you get something that takes awhile to run (like 1,000,000). Notice
 that your web page continues to be responsive even as this task runs in the background.
