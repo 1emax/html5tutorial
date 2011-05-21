@@ -1,50 +1,81 @@
-<h1>HTML5: Beyond the Buzzwords</h1>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF8"/>
+    <title>HTML5: Больше, чем модная фишка</title>
+    <style type="text/css">
+      body {
+        font-family: Georgia, Times, serif;
+        font-size: 1em;
+        line-height: 1.6em;
+      }
+      
+      h1.title {
+        text-align: center;
+        font-size: 3em;
+        border: none;
+        margin-top: 0.5em;
+        width: 
+      }
+      
+      h1 {
+        font-family: Ubuntu, "Trebuchet MS", Tachoma, Arial, sans;
+        margin-top: 2em;
+        margin-bottom: 0.5em;
+        color: #039;
+        border-top: 1px solid #039;
+        padding-top: 10px;
+      }
+      
+      h2 {
+        color: #039;
+      }
 
-<h1>GOALS</h1>
 
-<p>I am aiming to expand your imagination about the kinds of features that can be added to modern web applications without adding any dependencies
-or friction to your codebase. I want to provide you with just enough knowledge that you could start to take advantage of these
-capabilities in your own apps.</p>
+    </style>
+  </head>
+  <body>
+<h1 class="title">HTML5: Больше, чем модная фишка</h1>
+<h1>ЗАДАЧИ</h1>
 
-<h1>PREREQUISITES</h1>
+<p>Цель этого практикума - показать, как новые возможности HTML5 могут быть использованы в современных веб-приложениях без участия дополнительных зависимостей и противоречий с уже существующим кодом. Курс рассчитан на то, чтобы дать вам достаточно знаний для самостоятельного использования новых возможностей в своих приложениях.</p>
+
+<h1>ПРЕДВАРИТЕЛЬНЫЕ ТРЕБОВАНИЯ</h1>
 
 <ul>
-<li><p>These instructions were built using the latest version of Chrome, but will also work with the latest version of Safari or Firefox. Some of the exercises do not work perfectly in Firefox due to limitations in the browser. 
-I have not tested them with IE or Opera but much of the code should still work.</p></li>
-<li><p>Your browser should have a built-in JavaScript console. Chrome and Safari have a built-in JavaScript console. If you are using Firefox, be sure to install <a href="http://getfirebug.com">Firebug</a>.</p></li>
-<li><p>You need some kind of basic text editor (Vi, Emacs, Textmate, Notepad, etc.) to make changes to the project files.</p></li>
+<li><p>Все упражнения проверялись в последних версиях браузера Chrome, но они должны работать и в последних версиях Safari и Firefox. Некоторые упражнения работают в Firefox не так, как задумано, из-за ограничений браузера.
+Я не проверял работоспособность в IE или Opera, но большая часть кода должна работать и там.</p></li>
+<li><p>Ваш браузер должен иметь консоль JavaScript. Такая консоль уже имеется в Safari и Chrome. Если вы используете Firefox, не забудьте установить <a href="http://getfirebug.com">Firebug</a>.</p></li>
+<li><p>Вам понадобится текстовый редактор (Vi, Emacs, Textmate, Notepad, etc.) для внесения изменений в файлы проекта.</p></li>
 </ul>
 
-<h1>SETUP</h1>
+
+<h1>УСТАНОВКА</h1>
 
 <ol>
-<li><p>Copy the directory named <code>start</code> from this project to a new location on your machine. This will form the basis for the game we are building
-and includes all necessary dependencies.</p></li>
-<li><p>In your project, examine the index.html file you copied from <code>start</code>. This skeleton is heavily stripped down from the <a href="http://html5boilerplate.com/">HTML5 Boilerplate project</a>. The <a href="https://github.com/paulirish/html5-boilerplate/blob/master/index.html">full template</a> 
-is a good way to learn some state of the art HTML5 practices.</p>
+<li><p>Скопируйте папку <code>start</code> из этого проекта в какое-нибудь другое место. Эта папка содержит все необходимые зависимости и послужит основой для игры, которую мы будем делать.</p></li>
+<li><p>Изучите файл index.html в скопированной директории <code>start</code>. Он представляет собой упрощенный шаблон, основанный на <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>. Здесь вы можете найти <a href="https://github.com/paulirish/html5-boilerplate/blob/master/index.html">полный шаблон</a>. Это отличный способ изучить особенности HTML5.</p>
 
-<p>Note the doctype that starts this file. That's all you need to do to indicate to the browser that you want to use the latest, greatest version of HTML. 
-The boilerplate also shows the use of new HTML5 semantic tags <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code>. You can use these instead of less semantic code such as <code>&lt;div id=&quot;header&quot;&gt;&lt;/div&gt;</code>.</p></li>
-<li><p>Open up the index.html file in your browser. Then activate your JavaScript console (in Chrome, go to the View menu, choose Developer, then choose JavaScript console; in Safari, hit option-Apple-C). You should see the message &quot;You have a working console&quot;. If you don't see this message you should install Firebug or switch to a different browser.
-You will have a hard time completing this tutorial without a working console.</p>
+<p> Обратите внимание на DOCTYPE, с которого начинается этот файл. Это все, что нужно, чтобы указать браузеру, что вы используете последнюю, самую современную версию HTML.
+ Кроме того, в шаблоне используются новые семантические тэги <code>&lt;header&gt;</code> и <code>&lt;footer&gt;</code>. Их можно использовать вместо менее семантической разметки вроде <code>&lt;div id="header"&gt;&lt;/div&gt;</code>.</p></li>
+<li><p>Откройте index.html в вашем браузере. Затем откройте консоль JavaScript (в Chrome это делается через меню Вид > Инструменты > Консоль Javascript; в Safari достаточно нажать option-Apple-C). В консоли должно быть сообщение "Ваша консоль работает". Если вы не видите это сообщение, попробуйте установить Firebug или открыть файл в другом браузере. Без работающей консоли следовать этому руководству крайне затруднительно.</p>
 
-<p>That message was created by the file <code>js/tutorial.js</code>. I'll be using that file for all of our application code.</p></li>
+<p> Это сообщение было отправлено в консоль в файле <code>js/tutorial.js</code>. Я буду использовать этот файл для всего кода приложения.</p></li>
 </ol>
 
-<h1>EXERCISE ONE</h1>
 
-<h2>Feature Detection</h2>
+<h1>УПРАЖНЕНИЕ 1</h1>
+
+<h2>Определение возможностей</h2>
 
 <ol>
-<li><p>Examine <code>js/libs/modernizr</code>. This is the <a href="http://www.modernizr.com/">Modernizr</a> library that performs browser feature detection and helps style new HTML5 semantic elements. Because you can't yet
-rely on users having fully-capable browsers, feature detection is essential for providing useful error messages and fallbacks.</p></li>
-<li><p>To activate Modernizr, use your favorite text editor to add this line to the <code>&lt;HEAD&gt;</code> tag of <code>index.html</code>.</p>
+<li><p>Изучите файл <code>js/libs/modernizr</code>. Это библиотека <a href="http://www.modernizr.com/">Modernizr</a>, которая выполняет определение возможностей браузера и помогает применять стили к новым семантическим элементам HTML5. Пока рано полагаться на то, что браузеры полностью поддерживают новые возможности, поэтому крайне важно проводить определение возможностей браузера и выдавать осмысленные сообщения об ошибках в случае необходимости.</p></li>
+<li><p>Чтобы подключить Modernizr, откройте текстовый редактор и добавьте в тэг <code>&lt;HEAD&gt;</code> файла <code>index.html</code> следующую строку:</p>
 
-<p><code>&lt;script src=&quot;js/libs/modernizr-1.7.js&quot;&gt;&lt;/script&gt;</code></p>
+<p> <code>&lt;script src="js/libs/modernizr-1.7.js"&gt;&lt;/script&gt;</code></p>
 
-<p>Then add the class <code>no-js</code> to the <code>&lt;HTML&gt;</code> tag on the second line of the index.html file.</p></li>
-<li><p>Open up <code>index.html</code> in your browser and inspect the <code>&lt;HTML&gt;</code> tag. Notice that <code>no-js</code> has been replaced by several CSS declarations that can be used to style fallback content, reveal error messages, etc.</p></li>
-<li><p>Open up a JavaScript console and inspect the Modernizr object. To be able to complete all of the exercises in this tutorial, you'll need to see true values for all of these properties:</p>
+<p> Затем добавьте класс <code>no-js</code> к тэгу <code>&lt;HTML&gt;</code> во второй строке файла index.html.</p></li>
+<li><p>Откройте <code>index.html</code> в браузере и посмотрите на тэг <code>&lt;HTML&gt;</code>. Обратите внимание на то, что класс <code>no-js</code> был заменен на ряд объявлений CSS. Эти объявления можно использовать, чтобы показывать сообщения об ошибках или для стилизации контента, предъявлемого при недоступности некоторого функционала.</p></li>
+<li><p>Откройте консоль JavaScript и изучите объект Modernizr. Вы сможете выполнить все упражнения этого учебника, если все нижеприведенные свойства будут иметь значение true:</p>
 
 <ul>
 <li>Modernizr.canvas</li>
@@ -54,70 +85,71 @@ rely on users having fully-capable browsers, feature detection is essential for 
 <li>Modernizr.localstorage</li>
 </ul>
 
-<p>If you don't see &quot;true&quot; for all of these you should go ahead and install the <a href="http://www.google.com/chrome">Chrome</a> browser.</p></li>
+
+<p> Если какие-либо из этих свойств не имеют значения "true", установите браузер <a href="http://www.google.com/chrome">Chrome</a>.</p></li>
 </ol>
 
-<h2>Extra Credit</h2>
 
-<p>Using only CSS and HTML, use the <code>&lt;HTML&gt;</code> classes <code>touch</code> and <code>no-touch</code> to reveal a message to the user indicating whether or not they have a touch interface. If you have a mobile OS simulator installed (such as iOS Simulator) you can
-test both messages.</p>
+<h2>Дополнительное задание</h2>
 
-<h1>EXERCISE TWO</h1>
+<p>Используя только CSS и HTML и полагаясь на классы <code>touch</code> и <code>no-touch</code> элемента <code>&lt;HEAD&gt;</code>, выведите соотвествующее сообщение о том, поддерживает ли устройство пользователя тач-интерфейс. Если у вас установлен симулятор мобильной ОС (например, iOS Simulator), проверьте оба случая.</p>
 
-<h2>Basic Canvas Drawing</h2>
+<h1>УПРАЖНЕНИЕ 2</h1>
+
+<h2>Основы рисования на canvas</h2>
 
 <ol>
-<li><p>Add <code>&lt;canvas id=&quot;main&quot; width=&quot;400&quot; height=&quot;400&quot;&gt;&lt;/canvas&gt;</code> just after the opening of the <code>&lt;body&gt;</code> tag in your <code>index.html</code> file.</p></li>
-<li><p>To draw a rectangle in the canvas, add this code to js/tutorial.js:
-<pre>var canvas = document.getElementById(&quot;main&quot;);
-var context = canvas.getContext(&quot;2d&quot;);
+<li><p>Добавьте тэг <code>&lt;canvas id="main" width="400" height="400"&gt;&lt;/canvas&gt;</code> сразу после открывающего тэга <code>&lt;body&gt;</code> в файле <code>index.html</code>.</p></li>
+<li><p>Чтобы нарисовать на canvas прямоугольник, добавьте в js/tutorial.js следующий код:
+ <pre>var canvas = document.getElementById("main");
+var context = canvas.getContext("2d");
 context.fillRect(0,0,20,20);</pre></p>
 
-<p>All drawing operations happen on the canvas context, not the canvas itself. Right now &quot;2d&quot; is the only available context, but a future HTML spec may define a 3d context.</p></li>
-<li><p>Open <code>index.html</code> in your browser. You should see a black rectangle!</p></li>
-<li><p>Change the <code>fillRect</code> call to <code>strokeRect</code> and reload your browser. Now the rectangle is not filled-in.</p></li>
-<li><p>Set the context's <code>fillStyle</code> property to a CSS color like &quot;red&quot;, then reload the page to see a red rectangle.</p>
+<p> Рисование на canvas осуществляется в контексте canvas, а не на самом объекте canvas. В настоящее время доступен только контекст "2d". В будущем возможно появление 3D-контекста.</p></li>
+<li><p>Откройте <code>index.html</code> в браузере. Вы должны увидеть черный прямоугольник.</p></li>
+<li><p>Вместо <code>fillRect</code> вызовите <code>strokeRect</code> и обновите страницу в браузере. Теперь прямоугольник не закрашен.</p></li>
+<li><p>Задайте свойству <code>fillStyle</code> контекста какой-нибудь цвет CSS, например, красный - "red", нарисуйте закрашенный прямоугольник и обновите страницу. Вы увидите красный прямоугольник.</p>
 
-<pre>context.fillStyle = "red";</pre></li>
-<li><p>To draw text, add lines like this to <code>tutorial.js</code> and reload.</p>
+<p> <pre>context.fillStyle = "red";</pre></p></li>
+<li><p>Чтобы отобразить текст, добавьте в <code>tutorial.js</code> следующий код и обновите страницу.</p>
 
-<pre>context.font = "bold 24px sans-serif";
+<p> <pre>context.font = "bold 24px sans-serif";
 context.fillStyle = "blue";
-context.fillText("HTML5",100,100);</pre></li>
+context.fillText("HTML5",100,100);</pre></p></li>
 </ol>
 
-<h2>Extra Credit</h2>
 
-<p>Try filling your rectangle with a gradient. You'll need to create a gradient object as explained in <a href="http://diveintohtml5.org/canvas.html#gradients">Dive Into HTML5</a>, then set your fillStyle to that gradient.</p>
+<h2>Дополнительное задание</h2>
 
-<h1>EXERCISE THREE</h1>
+<p>Попробуйте залить прямоугольник градиентом. Для этого сначала вам нужно создать градиент (что объяснено здесь: <a href="http://diveintohtml5.org/canvas.html#gradients">Dive Into HTML5</a>), а затем установить этот градиент значением свойства fillStyle.</p>
 
-<h2>Canvas Image Manipulation</h2>
+<h1>УПРАЖНЕНИЕ 3</h1>
+
+<h2>Работа с изображениями на canvas</h2>
 
 <ol>
-<li><p>Copy the file <code>media/water.jpg</code> from the tutorial project to your project's <code>media</code> directory. (This image is <a href="http://www.flickr.com/photos/50183640@N05/5616041841/">Creative Commons-licensed</a>)</p></li>
-<li><p>Draw this image using the canvas by adding these lines to your <code>tutorial.js</code> file:</p>
+<li><p>Скопируйте файл <code>media/water.jpg</code> из папки <code>media</code> практикума в папку <code>media</code> вашего проекта. (Это изображение распростряняется на условиях лицензии <a href="http://www.flickr.com/photos/50183640@N05/5616041841/">Creative Commons-licensed</a>)</p></li>
+<li><p>Выведите это изображение на canvas, добавив следующий код в <code>tutorial.js</code>:</p>
 
-<pre>var img = new Image();
+<p> <pre>var img = new Image();
 img.src = "media/water.jpg";
 img.onload = function() {
-  context.drawImage(img,0,110);
-};</pre></li>
-<li><p>Reload your browser to see the image.</p></li>
-<li><p>Now add two additional parameters, a destination width and height, after the original 3 parameters:</p>
+   context.drawImage(img,0,110);
+};</pre></p></li>
+<li><p>Обновите страницу в браузере, чтобы увидеть картинку.</p></li>
+<li><p>Добавьте два дополнительных параметра после 3 уже имеющихся, ширину и высоту области вывода для картинки:</p>
 
-<pre>context.drawImage(img,0,110,200,100);</pre></li>
-<li><p>Reload the browser and observe the image scaled to a different size.</p></li>
-<li><p>Copy the sprite file we'll be using for our simple game, <code>media/characters.jpg</code> to the <code>media</code> folder of your project. (I got this CC-licensed file by David E. Gervais from the <a href="http://pousse.rapiere.free.fr/tome/">TomeTik</a> project)</p></li>
-<li><p>Use the 9 argument version of drawImage to slice out one character from the characters file and project it onto the canvas:</p>
+<p> <pre>context.drawImage(img,0,110,200,100);</pre></p></li>
+<li><p>Обновите страницу. Размер картинки будет другим.</p></li>
+<li><p>Для нашей простой игры нам понадобится файл со спрайтами <code>media/characters.gif</code>. Скопируйте его в папку <code>media</code> вашего проекта. (Я получил этот файл, лицензированный на условиях CC, от David E. Gervais, участника проекта <a href="http://pousse.rapiere.free.fr/tome/">TomeTik</a>)</p></li>
+<li><p>Чтобы вырезать одного персонажа из файла и отобразить его на canvas, вам придется вызвать <code>drawImage</code> с 9 аргументами:</p>
 
-<pre>drawImage(image,sx,sy,sw,sh,dx,dy,dw,dh);</pre>
+<p> <pre>drawImage(image,sx,sy,sw,sh,dx,dy,dw,dh);</pre></p>
 
-<p>The 9 arguments are explained in this image:
-<img src="http://images.whatwg.org/drawImage.png" alt="drawImage arguments">
-</p>
+<p> Назначение каждого из этих агрументов объяснено на картинке:
+ <img src="http://images.whatwg.org/drawImage.png" alt="drawImage arguments" /></p>
 
-<p>Each sprite is 32 pixels wide and 32 pixels high.  So if you want to slice out the 2nd character in the top row, with the red hood, you would start with these parameters:</p>
+<p> Каждый спрайт имеет ширину и высоту в 32 пикселя. Таким образом, если вы хотите вырезать второго персонажа в верхнем ряду, да-да, этого, в красном капюшоне, вам нужно вызвать <code>drawImage</code> с такими параметрами:</p>
 
 <ul>
 <li>sx = 33</li>
@@ -126,357 +158,353 @@ img.onload = function() {
 <li>sh = 32</li>
 </ul>
 
-<p>Choose dx, dy, dw, and dh to your taste, then reload the browser. Consult the solution in <code>ex3</code> if you get confused.</p></li>
+
+<p> Добавьте dx, dy, dw и dh по вкусу, затем обновите страницу. Если что-то не получается, посмотрите решение в папке <code>ex3</code>.</p></li>
 </ol>
 
-<h1>EXERCISE FOUR</h1>
 
-<h2>Basic Animation</h2>
+<h1>УПРАЖНЕНИЕ 4</h1>
+
+<h2>Простая анимация</h2>
 
 <ol>
-<li><p>Copy <code>js/libs/jquery-1.5.2.js</code> to the <code>js/libs</code> directory in your project. We'll be using jQuery to bind keyboard events and to perform other tasks.</p></li>
-<li><p>Add a this tag to the bottom of your index.html file, before the <code>tutorial.js</code> file is loaded, to load the jQuery library:</p>
+<li><p>Скопируйте <code>js/libs/jquery-1.5.2.js</code> в папку <code>js/libs</code> вашего проекта. jQuery понадобится нам для обработки событий клавиатуры и некоторых других задач.</p></li>
+<li><p>Чтобы подключить jQuery, добавьте следующий тэг в конец файла index.html, перед загрузкой файла <code>tutorial.js</code>:</p>
 
-<p><code>&lt;script src=&quot;js/libs/jquery-1.5.2.js&quot;&gt;&lt;/script&gt;</code></p></li>
-<li><p>Comment out most of the drawing code we had been working with so the page starts clean.  The only working code in your <code>tutorial.js</code> should look like this:</p>
+<p> <code>&lt;script src="js/libs/jquery-1.5.2.js"&gt;&lt;/script&gt;</code></p></li>
+<li><p>Закомментируйте большую часть кода, отвечающего за рисование. В этом упражнении мы начнем с чистого листа. Оставшийся в <code>tutorial.js</code> код должен выглядеть примерно так:</p>
 
-<pre>var canvas = document.getElementById("main");
+<p> <pre>var canvas = document.getElementById("main");
 var context = canvas.getContext("2d");
 
 var characters = new Image();
-characters.src = "media/characters.gif";</pre></li>
-<li><p>Initialize two variables, <code>x</code> and <code>y</code>, to zero. We'll use these to keep track of the user's current position.</p></li>
-<li><p>Initialize variables to store the height and width of the canvas. Later we'll be changing the size of the canvas dynamically so it makes sense to not hard code these values.</p>
+characters.src = "media/characters.gif";</pre></p></li>
+<li><p>Задайте значения переменных <code>x</code> и <code>y</code> равными нулю. В этих переменных будет храниться текущая позиция игрока.</p></li>
+<li><p>Задайте переменные для хранения ширины и высоты canvas. В дальнейшем мы будем менять размеры canvas, поэтому имеет смысл не задавать эти переменные константами.</p>
 
-<p><pre>var height = $(canvas).height();</pre>
- <pre>var width = $(canvas).width();</pre></p></li>
-<li><p>Setup another onload function for the characters object. When the characters image has loaded, we want to bind keyboard events to a function we'll write next:</p>
+<p>  <pre>var height = $(canvas).height();</pre>
+  <pre>var width = $(canvas).width();</pre></p></li>
+<li><p>Задайте обработчик для обработки события <code>onload</code> объекта <code>characters</code>. После загрузки изображения персонажа клавиатурные события будут обрабатываться функцией, которую мы напишем на следующем шаге:</p>
 
-<pre>$(window).keyup(move);</pre></li>
-<li><p>Write a move function that updates the character position on screen based on which arrow key was pressed.  Using the binding from the above step, your move function should 
-accept one argument passed by jQuery: an event object. That object has a &quot;which&quot; property containing the code for the key that was pressed.</p>
+<p> <pre>$(window).keyup(move);</pre></p></li>
+<li><p>Напишите функцию <code>move</code>, которая изменяет позицию персонажа на экране в зависимости от нажатой кнопки. На предыдущем шаге мы задали обрабочик клавиатурных событий. Этот обработчик должен принимать объект <code>event</code>, передаваемый jQuery. Этот объект имеет свойство <code>which</code>, указывающий на то, какая клавиша была нажата.</p>
 
-<p>The key codes are:</p>
+<p> Коды клавиш:</p>
 
 <ul>
-<li>Up = 38</li>
-<li>Down = 40</li>
-<li>Left = 37</li>
-<li>Right = 39</li>
+<li>Вверх = 38</li>
+<li>Вниз = 40</li>
+<li>Влево = 37</li>
+<li>Вправо = 39</li>
 </ul>
 
-<p>Increment or decrement x or y by 10, depending on which key was pressed. Be sure to guard against x or y going out of bounds (less than zero or greater than the canvas size).</p>
 
-<p>If you get confused check out <code>ex4/js/tutorial.js</code> for an example move function.</p></li>
-<li><p>At the end of your move function, call <code>context.drawImage</code> to slice out one of the sprites from our file and project it on the screen at the coordinates stored
-in x and y.</p>
+<p> Увеличивайте значение <code>x</code> или <code>y</code> на 10, в зависимости от того, какая клавиша была нажата. Проверяйте значения <code>x</code> и <code>y</code> на предмет выхода за границы canvas (значения не должны быть меньше нуля или больше размеров canvas).</p>
 
-<p>If you get confused check out <code>ex4/js/tutorial.js</code> to see what this looks like.</p></li>
-<li><p>Reload your browser and try it out. You should see your character tracking across the screen slowly.</p></li>
-<li><p>Let's make this look nicer by clearing the screen before each draw command.  Add this before your drawImage call:</p>
+<p> Если вы запутались, посмотрите как реализована эта функция в файле <code>ex4/js/tutorial.js</code>.</p></li>
+<li><p>В конце тела функции <code>move</code> вызовите <code>context.drawImage</code>, чтобы вырезать изображение из файла со спрайтами и отобразить его на canvas в координатах, заданных <code>x</code> и <code>y</code>.</p>
 
-<pre>context.clearRect(0,0,width,height);</pre></li>
-<li><p>You may also want to increase the number of pixels that the character travels per key press.</p></li>
+<p> Если вы запутались, посмотрите, как это сделано в файле <code>ex4/js/tutorial.js</code>.</p></li>
+<li><p>Обновите страницу и опробуйте анимацию. Персонаж должен неторопливо перемещаться по экрану при нажатии на клавиши со стрелками.</p></li>
+<li><p>Персонаж оставляет за собой некрасивый след. Исправить это можно путем очистки экрана перед каждым выводом персонажа. Добавьте следующий код перед вызовом <code>drawImage</code>:</p>
+
+<p> <pre>context.clearRect(0,0,width,height);</pre></p></li>
+<li><p>Если хотите, заставьте персонажа перемещаться на большее расстояние при каждом нажатии клавиши.</p></li>
 </ol>
 
-<h2>Extra Credit</h2>
 
-<p>Try setting up an animation loop that redraws the screen a few times per second. This will let you decouple the keyboard events from the drawing. You'll need something like this
-to start your loop:</p>
+<h2>Дополнительное задание</h2>
+
+<p>Попробуйте создать цикл анимации, который осуществлял бы вывод на экран несколько раз в секунду. Это поможет отделить обработку событий клавиатуры от отображения. Для запуска цикла вам понадобится что-то вроде:</p>
 
 <p><code>setInterval(runLoopFunction,interval);</code></p>
 
-<p>Where runLoopFunction is the name of your function and interval is the number of milliseconds the browser should wait in between calls to that function.</p>
+<p>Где <code>runLoopFunction</code> - имя вашей функции, а <code>interval</code> - количество миллисекунд, которые браузер должен выдерживать между вызовами функции.</p>
 
-<h1>EXERCISE FIVE</h1>
+<h1>УПРАЖНЕНИЕ 5</h1>
 
-<h2>Fun With Forms</h2>
+<h2>Работаем с формами</h2>
 
 <ol>
-<li><p>When we link this game up with other players we want to know who's who. So let's add a username field that takes advantage of new HTML5 form features. Add this line to your <code>index.html</code> file:</p>
+<li><p>Если мы сделаем нашу игру многопользовательской, нам нужно будет знать, как зовут игроков. Давайте добавим поле, которое принимает имя пользователя и использует новые возможности HTML5. Добавьте в файл <code>index.html</code> следующую строку:</p>
 
-<p><code>&lt;input id=&quot;username&quot; placeholder=&quot;Your name&quot;&gt;</code></p></li>
-<li><p>Reload the page. If you don't see any placerholder text, check the value of <code>Modernizr.input.placeholder</code> in your JavaScript console.</p></li>
-<li><p>Now add the <code>autofocus</code> attribute to that input field and reload. If your browser supports it, the field will automatically receive the focus. </p></li>
-<li><p>Let's try out a new form element, a slider we can use to control the size of our character. Add this to your <code>index.html</code> file (1):</p>
+<p> <code>&lt;input id="username" placeholder="Ваше имя"&gt;</code></p></li>
+<li><p>Обновите страницу. Если вы не видите текста "Ваше имя" в поле, проверьте значение <code>Modernizr.input.placeholder</code> в консоли JavaScript.</p></li>
+<li><p>Добавьте к полю ввода аттрибут <code>autofocus</code> и обновите страницу. Если браузер поддерживает такую возможность, поле автоматически получит фокус.</p></li>
+<li><p>Опробуем в деле новый элемент формы, ползунок, с помощью которого мы можем изменять размеры персонажа. Добавьте в <code>index.html</code> следующий код (1):</p>
 
-<p><code>&lt;input id=&quot;size&quot; type=&quot;range&quot; min=&quot;4&quot; max=&quot;320&quot; step=&quot;8&quot; value=&quot;32&quot;&gt;</code></p></li>
-<li><p>Bind changes to that slider to a function in <code>tutorial.js</code> that will control the destination width and height of your drawImage call. The binding should look like this:</p>
+<p> <code>&lt;input id="size" type="range" min="4" max="320" step="8" value="32"&gt;</code></p></li>
+<li><p>Добавьте обработчик событий ползунка в файл <code>tutorial.js</code>. Обработчик должен изменять размер изображения, выводимого вызовом <code>drawImage</code>. Задать обработчик можно так:</p>
 
-<p><code>$('#size').change(function() { ... });</code></p>
+<p> <code>$('#size').change(function() { ... });</code></p>
 
-<p>To get the value of the slider, use <code>$('#size').val()</code></p></li>
+<p> Получить значение ползунка можно с помощью <code>$('#size').val()</code></p></li>
 </ol>
 
-<p>(1) This element does not render in Firefox. Try it out in Safari or Chrome.</p>
 
-<h2>Extra Credit</h2>
+<p>(1) Firefox не отображает этот элемент. Выполните задание в Safari или Chrome.</p>
 
-<p>Try out some of the other input elements listed in the <a href="http://diveintohtml5.org/forms.html">Dive Into HTML5 book</a>, like the color picker!</p>
+<h2>Дополнительное задание</h2>
 
-<h1>EXERCISE SIX</h1>
+<p>Попробуйте использовать другие элементы формы, описанные в книге <a href="http://diveintohtml5.org/forms.html">Dive Into HTML5</a>. В HTMl5 есть даже элемент для выбора цвета!</p>
 
-<h2>Local Storage</h2>
+<h1>УПРАЖНЕНИЕ 6</h1>
 
-<p><strong>Note</strong>: this exercise will not work well in Firefox because of a bug in the way Firefox handles file:// URLs. If you want this to work in Firefox you'll need to serve up your code from a web server
-on your development machine. <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=507361">Details</a></p>
+<h2>Локальное хранилище</h2>
+
+<p><strong>Примечание</strong>: Это упражнение работает некорректно в Firefox из-за бага в обработке ссылок file://. Если вы хотите, чтобы все заработало и в Firefox, придется отдавать веб-страницу с сервера. <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=507361">Подробности</a></p>
 
 <ol>
-<li><p>At your JavaScript console, set a localStorage value:</p>
+<li><p>Сохраните значение в локальном хранилище из консоли JavaScript:</p>
 
-<pre>localStorage.setItem('shaz','bot')</pre></li>
-<li><p>Close the page completely, then reopen it in a new window and type this at your JavaScript console:</p>
+<p> <pre>localStorage.setItem('shaz','bot')</pre></p></li>
+<li><p>Закройте страницу, затем откройте ее в новом окне и введите в консоли JavaScript такую команду:</p>
 
-<pre>localStorage.getItem('shaz')</pre>
+<p> <pre>localStorage.getItem('shaz')</pre></p>
 
-<p>If your browser supports localStorage, you should get the value of <code>shaz</code> back.</p></li>
-<li><p>Try the above steps with the sessionStorage object. How does sessionStorage differ from localStorage?  What about when you merely reload a page?  Do they perform in the same way?</p></li>
-<li><p>Call <code>localStorage.clear()</code> and try getting the 'shaz' item again.</p></li>
-<li><p>Bind a new function to the change event of the username input field we added in exercise 5, like this:</p>
+<p> Если ваш браузер поддерживает локальные хранилища, функция должна вернуть значение <code>shaz</code>.</p></li>
+<li><p>Попробуйте проделать то же самое с объектом <code>sessionStorage</code>. Чем <code>sessionStorage</code> отличается от <code>localStorage</code>? Что происходит, если вы просто обновляете страницу? Одинаково ли ведут себя объекты?</p></li>
+<li><p>Вызовите <code>localStorage.clear()</code> и попробуйте еще раз найти элемент 'shaz'.</p></li>
+<li><p>Добавьте обработчик события <code>change</code> для поля ввода имени пользователя, которое мы создали в упражнении 5:</p>
 
-<pre>$('#username').change(function() { ... });</pre></li>
-<li><p>In that bound function, use localStorage to store the user's name. You may need to change the focus by clicking elsewhere on the page to get this event to fire.  To fetch the value of the username field, use <code>$(&quot;#username&quot;).val()</code>.</p></li>
-<li><p>Add a line of code to <code>tutorial.js</code> to fetch the user's name from localStorage (which you stored in the above step) when the page loads. If there is a previously-stored username, set the value of the username field
-to the pre-stored field like this: <code>$(&quot;#username&quot;).val(nameStr)</code>.</p></li>
-<li><p>Reload the page. Type in a username, tab away from the username field (to make sure the change event fires), then reload the page. Your username should already be filled-in, instead of the placerholder text.</p></li>
-<li><p>Try setting and getting numbers and hashes in localStorage. Does localStorage preserve type?</p></li>
+<p> <pre>$('#username').change(function() { ... });</pre></p></li>
+<li><p>В обработчике сохраните имя пользователя с помощью <code>localStorage</code>. Чтобы вызвать событие <code>change</code> вам, возможно, нужно будет снять фокус с поля ввода.  Чтобы получить значение поля ввода, используйте <code>$("#username").val()</code>.</p></li>
+<li><p>Добавьте в <code>tutorial.js</code> код для получения имени пользователя из <code>localStorage</code> (которое мы сохранили на предыдущем шаге) при загрузке страницы. Если имя пользователя найдено в хранилище, восстановите ранее сохраненное имя пользователя в поле ввода, например так: <code>$("#username").val(nameStr)</code>.</p></li>
+<li><p>Обновите страницу. Введите имя пользователя, снимите фокус с поля (чтобы убедиться, что событие <code>change</code> вызвано), затем снова обновите страницу. На этот раз поле ввода должно содержать имя пользователя вместо текста по умолчанию.</p></li>
+<li><p>Попробуйте сохранять и извлекать из локального хранилища числа и хэши. Сохраняет ли локальное хранилище тип?</p></li>
 </ol>
 
-<p><em>Your JavaScript console may also have an inspector for local and session storage. In WebKit's inspector, it's Storage tab.</em></p>
 
-<h2>Extra Credit</h2>
+<p><em>Консоль JavaScript может обладать функцией просмотра локального хранилища и хранилища сессии. В инструменте для разработчиков движка WebKit содержимое хранилищ можно посмотреть на соответствующей вкладке.</em></p>
+
+<h2>Дополнительное задание</h2>
 
 <ol>
-<li><p>Bind the window object's <code>storage</code> event to keep track of when new items are added to localStorage. See <a href="http://diveintohtml5.org/storage.html#storage-event">Dive Into HTML5</a> if you get stuck.</p></li>
-<li><p>What happens when you try to get an item that has not been previously set from localStorage?</p></li>
+<li><p>Добавьте к объекту <code>window</code> обработчик события <code>storage</code>, чтобы отслеживать добавление новых элементов в локальное хранилище. Если не знаете, с чего начать, начните отсюда: <a href="http://diveintohtml5.org/storage.html#storage-event">Dive Into HTML5</a>.</p></li>
+<li><p>Что произойдет, если попытаться обратиться к элементу, которые не был сохранен в хранилище?</p></li>
 </ol>
 
-<h1>EXERCISE 7</h1>
 
-<h2>Canvas Cleanup</h2>
+<h1>УПРАЖНЕНИЕ 7</h1>
+
+<h2>Очистка canvas</h2>
 
 <ol>
-<li><p>Let's make things a little nicer before we add multi-player features to this &quot;game&quot;. First, let's set a dark background for our canvas. Add this declaration to the <code>&lt;head&gt;</code> section of <code>index.html</code>:</p>
+<li><p>Прежде, чем добавить в нашу "игру" возможности мультиплеера, поработаем над ее внешним видом. Установим для canvas темный фон. Добавьте этот код в тэг <code>&lt;head&gt;</code> файла <code>index.html</code>:</p>
 
-<pre><code>&lt;style&gt;
-  canvas { 
-    background-color: black;
-  }
+<pre><code> &lt;style&gt;
+   canvas { 
+     background-color: black;
+   }
 
-  input { display: block; }
-&lt;/style&gt;
+   input { display: block; }
+ &lt;/style&gt;
 </code></pre></li>
-<li><p>You may also want to increase the width and height of your canvas element.</p></li>
-<li><p>Increase the step size for your character so it moves 5 or 10 pixels at a time.</p></li>
+<li><p>Если хотите, можно увеличить ширину и высоту canvas.</p></li>
+<li><p>Увеличьте скорость перемещения персонажа так, чтобы он перемещался на 5 или 10 пикселей на одно нажатие клавиши.</p></li>
 </ol>
 
-<h1>EXERCISE 8</h1>
+
+<h1>УПРАЖНЕНИЕ 8</h1>
 
 <h2>Web Sockets</h2>
 
-<p><strong>Note</strong>: WebSockets are disabled in Firefox. You may be able to get something working by using <a href="http://socket.io/">socket.io</a>.</p>
+<p><strong>Примечание</strong>: WebSockets не работают в Firefox. Вы можете исправить это (частично) с помощью <a href="http://socket.io/">socket.io</a>.</p>
 
 <ol>
-<li><p>Let's connect to a websocket server in order to exchange information with other players.  Add the following code to your <code>tutorial.js</code> file. I noticed that I would sometimes get errors
-if this code fired before the <code>characters.gif</code> image file loaded, so you may want to stick this in the onload handler for that object. See the exercise 8 solution if this is confusing.</p>
+<li><p>Подключим websocket-сервер для обмена информацией с другими игроками. Добавьте в <code>tutorial.js</code> код, приведенный ниже. Я заметил, что если этот код выполняется до загрузки <code>characters.gif</code>, это иногда приводит к ошибкам. Возможно, имеет смысл вставить этот код в обработчик события <code>onload</code> картинки. Если вам непонятно, о чем речь, загляните в решение для упражнения 8.</p>
 
-<pre>var ws = new WebSocket("ws://exp.subelsky.com:8011");
+<p> <pre>var ws = new WebSocket("ws://exp.subelsky.com:8011");
 ws.onmessage = handleMessage;
 
 function handleMessage(event) {
   console.info(event.data);
-}</pre></li>
-<li><p>Reload your browser. Every 10 seconds you should see a &quot;ping&quot; message from the server.  Note that this is a JSON string that we'll need to unmarshal before we can work with it.</p></li>
-<li><p>Check out the Ruby code in <code>server/server.rb</code> to see what you're connecting to with that string.</p></li>
-<li><p>Modify the <code>handleMessage</code> function to parse the JSON string. If your browser does not have a native JSON implementation, you'll need to add the script <code>js/libs/json2.js</code> to your project for this code to work.</p>
+}</pre></p></li>
+<li><p>Обновите страницу. Каждые 10 секунд с сервера должно приходить сообщение "ping". Обратите внимание, что это сообщение - JSON-строка, поэтому прежде чем работать с ней, ее надо десериализовать.</p></li>
+<li><p>Откройте <code>server/server.rb</code>, чтобы понять, к чему мы подключаемся.</p></li>
+<li><p>Измените функцию <code>handleMessage</code>, добавив разбор JSON-строки. Если ваш браузер не имеет встроенной поддержки JSON, подключите к проекту скрипт <code>js/libs/json2.js</code>.</p>
 
-<pre>var msg = JSON.parse(event.data);
-console.info(msg);</pre></li>
-<li><p>Reload your browser, wait 10 seconds, then check your console. You should see the de-marshalled JSON object displayed.</p></li>
-<li><p>Modify your <code>move</code> function to send a JavaScript object out on the websocket every time you move your character. Use the websocket.send method like this:</p>
+<p> <pre>var msg = JSON.parse(event.data);
+console.info(msg);</pre></p></li>
+<li><p>Обновите страницу, подождите 10 секунд и проверьте консоль. Вы должны увидеть десериализованный JSON-объект.</p></li>
+<li><p>Измените функцию <code>move</code>, добавив в нее отправку JavaScript-объекта в websocket каждый раз при перемещении персонажа. Воспользуйтесь методом <code>websocket.send</code>:</p>
 
-<pre>ws.send(JSON.stringify({ name: name, x: x, y: y, type: "move" }));</pre></li>
-<li><p>Check out the server log being tailed on the screen. You should see your movement messages showing up every time you push a key.</p></li>
+<p> <pre>ws.send(JSON.stringify({ name: name, x: x, y: y, type: "move" }));</pre></p></li>
+<li><p>Посмотрите логи сервера, выводимые на экран. Каждый раз при нажатии клавиши перемещения в логе должны появляется сообщения о перемещении персонажа.</p></li>
 </ol>
 
-<p>If you are thinking of building an app with websockets, definitely check out <a href="http://pusherapp.com/">Pusher</a> which may save you the trouble of writing your own server.</p>
 
-<h2>Extra Credit</h2>
+<p>Если вы подумываете о создании приложения с использованием websocket, обязательно посмотрите проект <a href="http://pusherapp.com/">Pusher</a>. Возможно, вам не придется писать собственный сервер.</p>
 
-<p>The server is broadcasting all movement events to the whole class. To display other student positions on your screen, you'll need to keep track of their usernames and x and y positions (probably
-with a hash, where the keys are user names and the values are coordinates).  Modify your handleMessage message to display multiple players, displaying a different image for your own sprite vs.
-other users. </p>
+<h2>Дополнительное задание</h2>
 
-<p>Also, we're not doing anything to ensure uniqueness of usernames, so make sure you pick a name that won't collide with anyone else's name.</p>
+<p>Сервер передает события передвижения всему классу <em>(практикум проводился на конференции, компьютеры студентов были объединены в сеть - прим. пер.)</em>. Чтобы отобразить перемещения других студентов на экране, нужно отследить их имена и координаты x и y (реализовать это лучше с помощью кэша, ключами которого будут имена пользователей, а значениями - координаты). Измените вывод <code>handleMessage</code> так, чтобы он давал информацию о нескольких игроках, показывая другую картинку для чужих персонажей.</p>
 
-<h1>EXERCISE 9</h1>
+<p>Мы не проверяем имена пользователей на уникальность, поэтому постарайтесь сразу договориться с другими студентами о разных именах.</p>
 
-<h2>Embedded Media (and Data Attributes)</h2>
+<h1>УПРАЖНЕНИЕ 9</h1>
 
-<p>Let's add some sound effects to our game and take advantage of HTML5's data attributes to simplify our controls.</p>
+<h2>Работа с мультимедия (и пользовательскими аттрибутами)</h2>
+
+<p>Добавим в игру звуковые эффекты и воспользуемся пользовательскими аттрибутами HTML5 для упрощения управления.</p>
 
 <ol>
-<li><p>Add this list element to your <code>index.html</code> body:</p>
+<li><p>Добавьте в тело <code>index.html</code> такой список:</p>
 
-<pre><code>&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#&quot; data-soundname='bubble'&gt;Play Bubble&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#&quot; data-soundname='ray_gun'&gt;Play Ray Gun&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+<pre><code> &lt;ul&gt;
+   &lt;li&gt;&lt;a href="#" data-soundname='bubble'&gt;Бульк&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href="#" data-soundname='ray_gun'&gt;Пыщь&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;
 </code></pre></li>
-<li><p>Use jQuery to bind the <code>&lt;a&gt;</code> tag's <code>click</code> event. You can figure out which soundname the user wants by inspecting the click event's data attribute, as below. I've
-included the cross-browser version as well as the version provided for in the <a href="http://dev.w3.org/html5/spec/elements.html#embedding-custom-non-visible-data">HTML5 spec</a>, which only Chrome seems to support.</p>
+<li><p>С помощью jQuery добавьте обработчик события <code>click</code> для тэга <code>&lt;a&gt;</code>. Определить, какой звук требуется проиграть, можно спомощью значения пользовательского аттрибута события, как это показано ниже. Здесь я использовал кросс-браузерное решение, а также вариант, предложенный в <a href="http://dev.w3.org/html5/spec/elements.html#embedding-custom-non-visible-data">спецификации HTML5</a>, который, похоже, поддерживает только Chrome.</p>
 
-<pre><code>$('a').click(function(evt) {
-  // this spec version is not as pretty but works across browsers
-  $('#'+evt.target.getAttribute('data-soundname'))[0].play();
+<pre><code> $('a').click(function(evt) {
+   // не слишком элегантно, зато работает во всех браузерах
+   $('#'+evt.target.getAttribute('data-soundname'))[0].play();
 
-  // the HTML5 spec provides a nicer API, but this version only seems to work in Chrome
-  // $('#'+evt.target.dataset.soundname)[0].play();
-});
+   // спецификация HTML5 предлагает изящный API, но работает это, по-видимому, только в Chrome
+   // $('#'+evt.target.dataset.soundname)[0].play();
+ });
 </code></pre>
 
-<p>Note that data attributes are different from micro-data, because they are not intended for external consumption.  See <a href="http://diveintohtml5.org/extensibility.html">Dive Into HTML5</a> for more details about microdata.</p></li>
-<li><p>Reload the page. Click each link to verify that you can read the <code>dataset</code> property and are getting the correct soundname.</p></li>
-<li><p>Playing audio and video in HTML5 involves a lot of codec hassles. You usually have to provide your content in multiple formats. To make things simple, I've included these two 
-sound files in four different formats. Copy the sound files from the <code>media</code> directory to your project. If you are serving these files through a web server (and not viewing them via a file:// URL), you may have 
-to fiddle with your MIME settings because HTML5 will choke if your audio files aren't served with the proper MIME type. See <a href="http://diveintohtml5.org/video.html#video-mime-types">MIME Types</a> for details.</p>
+<p> Не стоит путать пользовательские аттрибуты с микроданными - они не предназначены для внешней обработки.  Подробне о микроданных можно почитать в <a href="http://diveintohtml5.org/extensibility.html">Dive Into HTML5</a>.</p></li>
+<li><p>Обновите страницу. Щелкните каждую ссылку, чтобы убедиться, что свойство <code>dataset</code> доступно и получает нужное значение.</p></li>
+<li><p>Воспроизведение звука и видео в HTML5 подразумевает возню с кодеками. Обычно контент делают доступным в нескольких форматах. Я добавил звуковые файлы в четырех разных форматах. Скопируйте звуковые файлы из папки <code>media</code> в ваш проект. Если вы отдаете эти файлы с сервера (а не через file://), возможно, вам придется повозиться с MIME, так как HTML5 не будет воспроизводить файлы, отданные с неверным MIME типом. Подробнее см. <a href="http://diveintohtml5.org/video.html#video-mime-types">MIME Types</a>.</p>
 
-<p>The following audio embed should work for most people, though. The spec says that the browser should pick the first listed source that it can play.</p>
+<p> Следующий код должен работать для большинства пользователей. Спецификация предприсывает браузеру воспроизводить первый источник, который он способен воспроизвести.</p>
 
-<pre><code>&lt;div style=&quot;display:hidden&quot;&gt;
-  &lt;audio id=&quot;bubble&quot; preload&gt;
-    &lt;source src=&quot;media/bubble.ogg&quot;&gt;
-    &lt;source src=&quot;media/bubble.mp3&quot;&gt;
-    &lt;source src=&quot;media/bubble.wav&quot;&gt;
-  &lt;/audio&gt;
+<pre><code> &lt;div style="display:hidden"&gt;
+   &lt;audio id="bubble" preload&gt;
+     &lt;source src="media/bubble.ogg"&gt;
+     &lt;source src="media/bubble.mp3"&gt;
+     &lt;source src="media/bubble.wav"&gt;
+   &lt;/audio&gt;
 
-  &lt;audio id=&quot;ray_gun&quot; preload&gt;
-    &lt;source src=&quot;media/ray_gun.ogg&quot;&gt;
-    &lt;source src=&quot;media/ray_gun.mp3&quot;&gt;
-    &lt;source src=&quot;media/ray_gun.wav&quot;&gt;
-  &lt;/audio&gt;
-&lt;/div&gt;
+   &lt;audio id="ray_gun" preload&gt;
+     &lt;source src="media/ray_gun.ogg"&gt;
+     &lt;source src="media/ray_gun.mp3"&gt;
+     &lt;source src="media/ray_gun.wav"&gt;
+   &lt;/audio&gt;
+ &lt;/div&gt;
 </code></pre>
 
-<p>I chose to embed these directly on the page so we could take advantage of the browser's content fallback selection. You can also create audio objects just like we did with Image objects earlier:</p>
+<p> Я решил добавить звуковые файлы прямо в страницу. В этом случае, если HTML5-аудио не сработает, браузер обработает их как обычно. А вообще аудио-объекты можно создавать также, как и картинки:</p>
 
-<pre><code>var audio = new Audio;
-audio.src = &quot;http://...&quot;;
+<pre><code> var audio = new Audio;
+ audio.src = "http://...";
 </code></pre></li>
-<li><p>Reload your page, then try playing both sounds at the console:</p>
+<li><p>Обновите страницу. Попробуйте проиграть оба файла в консоли:</p>
 
-<pre>$('#bubble')[0].play()
-$('#ray_gun')[0].play()</pre></li>
-<li><p>Modify your anchor click event handler to automatically play the requested sound using the above technique.</p></li>
-<li><p>To see what basic HTML5 audio controls look like, remove <code>display:hidden</code> from the <code>&lt;div&gt;</code> and add the <code>controls</code> attribute next to <code>preload</code>, then reload the page.</p></li>
-<li><p>Video embedding works the same way. We need to provide multiple versions of video files to ensure compatibility across modern browsers.  Copy the files <code>short.mov</code>, <code>short.mp4</code>, <code>short.ogv</code>, and <code>short.webm</code> from the <code>media</code> directory to your project's <code>media</code> directory.</p>
+<p> <pre>$('#bubble')[0].play()
+ $('#ray_gun')[0].play()</pre></p></li>
+<li><p>Измените ссылку так, чтобы указанные файлы воспроизводились автоматически. Воспользуйтесь кодом из предыдущего шага.</p></li>
+<li><p>Чтобы посмотреть, как выглядят элементы управления звуком по умолчанию, уберите стиль <code>display:hidden</code> для <code>&lt;div&gt;</code> и добавьте аттрибут <code>controls</code> после <code>preload</code>. Обновите страницу.</p></li>
+<li><p>Вставка видео происходит также. Для обеспечения совместимости придется предоставить несколько форматов видео.  Скопируйте файлы <code>short.mov</code>, <code>short.mp4</code>, <code>short.ogv</code> и <code>short.webm</code> из папки <code>media</code> в папку <code>media</code> вашего проекта.</p>
 
-<p>These files were created from a QuickTime movie using <code>ffmpeg2theora</code>, <code>ffmpeg</code> and <code>HandBrakeCLI</code>, using settings from <a href="http://diveintohtml5.org/video.html">Dive Into HTML5</a>.</p></li>
-<li><p>Add this to the bottom of your <code>index.html</code> page:</p>
+<p> Видео было сконвертировано из файла QuickTime с помощью <code>ffmpeg2theora</code>, <code>ffmpeg</code> и <code>HandBrakeCLI</code>. Настройки конвертации были подсмотрены в <a href="http://diveintohtml5.org/video.html">Dive Into HTML5</a>.</p></li>
+<li><p>Добавьте в конец <code>index.html</code>:</p>
 
-<pre><code>  &lt;video width=&quot;320&quot; height=&quot;240&quot; preload controls&gt;
-    &lt;source src=&quot;media/short.ogg&quot; type='video/ogg; codecs=&quot;theora, vorbis&quot;' /&gt;
-    &lt;source src=&quot;media/short.mp4&quot; /&gt;
-    &lt;source src=&quot;media/short.mov&quot; /&gt;
-  &lt;/video&gt;
+<pre><code>   &lt;video width="320" height="240" preload controls&gt;
+     &lt;source src="media/short.ogg" type='video/ogg; codecs="theora, vorbis"' /&gt;
+     &lt;source src="media/short.mp4" /&gt;
+     &lt;source src="media/short.mov" /&gt;
+   &lt;/video&gt;
 </code></pre></li>
-<li><p>Reload the page. One of those four formats should display in your browser.</p>
+<li><p>Обновите страницу. Один из видеофайлов должен отобразиться в вашем браузере.</p>
 
-<p>For a cool example of how to use the canvas to manipulate images from a video, check out <a href="http://html5demos.com/video-canvas">this demo</a>. There's also a good demonstration of using embedded media events to show a timer
-in <a href="http://html5demos.com/video">this demo</a>.</p></li>
+<p>Потрясающий пример использования canvas для манипулирования изображением из видео можно найти <a href="http://html5demos.com/video-canvas">здесь</a>. В этом <a href="http://html5demos.com/video">демо</a> показано использование событий вставленного медиаконтента для отображения таймера.</p></li>
 </ol>
 
-<h2>Extra Credit</h2>
 
-<p>Use the <a href="http://flowplayer.org/">FlowPlayer</a> Flash-based video player as the ultimate fallback for this content (you'll need to embed a <code>&lt;object&gt;</code> tag after the <code>&lt;source&gt;</code> tags. The technique is explained
-at <a href="http://camendesign.com/code/video_for_everybody">Video for Everybody</a>.</p>
+<h2>Дополнительное задание</h2>
 
-<h1>EXERCISE TEN</h1>
+<p>Если воспроизведение мультимедия на поддерживается браузером, воспользуйтесь флеш-плеером <a href="http://flowplayer.org/">FlowPlayer</a> (для этого нужно добавить тэг <code>&lt;object&gt;</code> после тэгов <code>&lt;source&gt;</code>. Подробно эта техника освещена в статье <a href="http://camendesign.com/code/video_for_everybody">Video for Everybody</a>).</p>
 
-<h2>Geolocation</h2>
+<h1>УПРАЖНЕНИЕ 10</h1>
+
+<h2>Геолокация</h2>
 
 <ol>
-<li><p>At the JavaScript console, type the following command:</p>
+<li><p>Введите эту команду в консоль JavaScript:</p>
 
-<pre>navigator.geolocation.getCurrentPosition(function(loc) { console.info(loc.coords) }, function(err) { console.error(err) })</pre></li>
-<li><p>Inspect the location object in the console. If you lookup those coordinates in Google Maps you should get a result fairly close to the convention center! It's very easy to integrate this info
-with Google Maps to show a map at the user's location, but unfortunately this can't be done from localhost due to Google Maps API authentication issues. 
-<a href="http://html5demos.com/geo">This link</a> has a simple demo - be sure to view source on the page.</p>
+<p> <pre>navigator.geolocation.getCurrentPosition(function(loc) { console.info(loc.coords) }, function(err) { console.error(err) })</pre></p></li>
+<li><p>Посмотрите на объект локации в консоле. Если поискать эти координаты на Google Maps, то результат окажется довольно точным! Интегрировать геолокацию с Google Maps очень легко, и это позволит показывать положение пользователя на карте. К сожалению, из-за особенностей аутентификации Google Maps API сделать это с localhost не получится.
+<a href="http://html5demos.com/geo">Здесь</a> расположено простое демо - обязательно изучите исходный код страницы.</p>
 
-<p>The first callback gets fired if the browser can guess its location. The second callback fires if it can't. For me, the second callback fired in
-Safari when I ran it on a machine with an Ethernet connection.</p></li>
+<p>  Первая функция обратного вызова вызывается, если браузер может определить свое положения, вторая - если не может. На моей машине вторая функция вызывается в Safari, если компьютер подключен к сети через Ethernet.</p></li>
 </ol>
 
-<h2>Extra Credit</h2>
 
-<p>Check out <a href="https://simplegeo.com/docs/tutorials/javascript">SimpleGeo</a> for some examples of other cool things you can do when you know a user's approximate location.</p>
+<h2>Дополнительное задание</h2>
 
-<h1>EXERCISE ELEVEN</h1>
+<p>Посмотрите на <a href="https://simplegeo.com/docs/tutorials/javascript">SimpleGeo</a> примеры того, что можно сделать, если знать примерные координаты пользователя.</p>
+
+<h1>УПРАЖНЕНИЕ 11</h1>
 
 <h2>Web Workers</h2>
 
 <ol>
-<li><p>Examine the file <code>js/worker.js</code> and then copy it to your project. This is a simple brute-force algorithm to find all the factors of a given integer.</p></li>
-<li><p>Reload the page, then type these lines at your JavaScript console:</p>
+<li><p>Изучите файл <code>js/worker.js</code> и скопируйте его в свой проект. Это простой алгоритм перебора, призванный найти все множители данного целого числа.</p></li>
+<li><p>Обновите страницу и введите в консоль JavaScript следующие команды:</p>
 
-<pre>var worker = new Worker('js/worker.js');
+<p> <pre>var worker = new Worker('js/worker.js');
 
 worker.addEventListener('message', function(e) {
   console.info(e.data);
 },false);
 
-worker.postMessage(100);</pre>
+worker.postMessage(100);</pre></p>
 
-<p><strong>If you are using Chrome</strong>, you will get a security exception if you are loading index.html as a file:// URI. You can reopen Chrome with a command-line flag to circumvent the exception, though.
-This is what worked for me on OS X:</p>
+<p> <strong>Если вы используете Chrome</strong>, при открытии <code>index.html</code> как file:// будет вызвано исключение безопасности. Отключить его можно, запустив Chrome из консоли с особым ключом.
+ На OS X это выглядит так:</p>
 
-<pre>open -n -a 'Google Chrome.app' --args --allow-file-access-from-files</pre>
+<p> <pre>open -n -a 'Google Chrome.app' --args --allow-file-access-from-files</pre></p>
 
-<p>Or just use a different browser.</p></li>
-<li><p>You should see the worker immediately post a response to the console. Try increasing the size of the number you pass to worker.postMessage until you get something that takes awhile to run (like 1,000,000). Notice
-that your web page continues to be responsive even as this task runs in the background.</p></li>
+<p> А можно просто воспользоваться другим браузером.</p></li>
+<li><p>Worker должен отправить в консоль сообщение. Попробуйте передадать в <code>worker.postMessage</code> большее число. Достаточно большое число (например, 1 000 000) приведет к длительным вычислениям. Обратите внимание, что страница останется отзывчивой  при выполнении такого фонового задания.</p></li>
 </ol>
 
-<p>Here's a <a href="http://nerget.com/rayjs-mt/rayjs.html">more complicated webworker example</a>.</p>
 
-<h1>EXERCISE TWELVE</h1>
+<p>Вот <a href="http://nerget.com/rayjs-mt/rayjs.html">более сложный пример использования webworker</a>.</p>
 
-<h2>Offline Apps</h2>
+<h1>УПРАЖНЕНИЕ 12</h1>
+
+<h2>Оффлайновые приложения</h2>
 
 <ol>
-<li><p>Examine the <code>index.html</code> file in the <code>manifest</code> directory. This is a stripped-down version of the exercise 11 solution. Check out the <code>&lt;html&gt;</code> tag which now includes a reference to <code>demo.manifest.</code></p></li>
-<li><p>Examine <code>demo.manifest</code>.</p></li>
-<li><p>If you have a packet sniffer, start it sniffing on port 80. Otherwise, make sure your JavaScript console is recording network traffic.</p></li>
-<li><p>Now visit <a href="http://files.subelsky.com/manifestdemo/index.html">http://files.subelsky.com/manifestdemo/index.html</a></p></li>
-<li><p>In your packet sniffer or JavaScript console, note that all files are being downloaded, and note the MIME type of the <code>demo.manifest</code> file (<code>text/cache-manifest</code>).</p></li>
-<li><p>Now reload the page. If all goes well, the only traffic you'll see moving along the wire is a request to check the demo.manifest file, which doesn't even get downloaded since it is unchanged 
-(because of the <code>304</code> HTTP response status code).</p>
+<li><p>Изучите файл <code>index.html</code> в папке <code>manifest</code>. Это сокращенная версия решения упражнения 11. Обратите внимание на тэг <code>&lt;html&gt;</code>, который в этой версии содержит ссылку на <code>demo.manifest.</code></p></li>
+<li><p>Изучите <code>demo.manifest</code>.</p></li>
+<li><p>Если у вас установлен сниффер, натравите его на порт 80. Если сниффера нет, убедитесь, что консоль JavaScript отслеживает сетевой траффик.</p></li>
+<li><p>Зайдите на <a href="http://files.subelsky.com/manifestdemo/index.html">http://files.subelsky.com/manifestdemo/index.html</a></p></li>
+<li><p>Посмотрите в сниффере или консоли JavaScript, какие файлы скачиваются. Обратите внимание на MIME-тип файла <code>demo.manifest</code> (<code>text/cache-manifest</code>).</p></li>
+<li><p>Теперь обновите страницу. Если все заработает как надо, траффик будет состоять из единственного запроса проверки файла <code>demo.manifest</code>, который даже не будет скачан, т.к. он не изменялся (о чем свидетельствует статус <code>304</code> HTTP-ответа).</p>
 
-<p>This is the same technique you can use to make an HTML5 app &quot;installable&quot; on a smart phone.</p></li>
+<p> Используя эту технику, можно "установить" HTML5-приложение на смартфон.</p></li>
 </ol>
 
-<h2>Extra Credit</h2>
 
-<p>Get <code>manifest/index.html</code> running on your dev machine. All you need to do is serve up the directory from the webserver (vs. from <code>file://</code>), and make sure the manifest file has the right MIME type. In Apache,
-I added this directive to <code>httpd.conf</code>:</p>
+<h2>Дополнительное задание</h2>
+
+<p>Запустите <code>manifest/index.html</code> на локальном сервере. Папка с приложением должна отдаваться с веб-сервера (а не через файл <code>file://</code>), а файл с манифестом должен иметь правильный MIME-тип. В Apache это достигается следующей директивой в <code>httpd.conf</code>:</p>
 
 <pre><code>AddType text/cache-manifest .manifest
 </code></pre>
 
-<h1>THAT WAS TOO EASY?</h1>
+<h1>СЛИШКОМ ПРОСТО?</h1>
 
-<p>Here are some other &quot;HTML5-ish&quot; features that you should be aware of that didn't fit into this tutorial or are too bleeding-edge to be used reliably:</p>
+<p>Вот еще несколько возможностей HTML5, о который стоит знать, если этот практикум вам не подошел, или если вы считаете, что пока эти технологии слишком нестабильны для практического применения:</p>
 
 <ul>
 <li><p><a href="http://diveintohtml5.org/extensibility.html">Microdata</a></p></li>
 <li><p><a href="http://www.queness.com/post/7459/8-stunning-javascript-webgl-demonstrations">WebGL</a></p></li>
 <li><p><a href="http://html5demos.com/history/">HTML5 History API</a></p></li>
-<li><p><a href="http://html5doctor.com/methods-of-communication/">Alternatives to websockets</a></p></li>
-<li><p><a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills">Polyfills to get HTML5 features working across browsers</a> and also <a href="http://html5doctor.com/how-to-get-all-the-browsers-playing-ball/">Uber</a></p></li>
-<li><p><a href="http://www.css3.com/">Various CSS3 capabilities like rounded corners, 2D transforms, etc.</a></p></li>
+<li><p><a href="http://html5doctor.com/methods-of-communication/">Альтернатива websockets</a></p></li>
+<li><p><a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills">Polyfills, или как добавить кросс-браузерную поддержку HTML5</a>, также посмотрите <a href="http://html5doctor.com/how-to-get-all-the-browsers-playing-ball/">Uber</a></p></li>
+<li><p><a href="http://www.css3.com/">Возможности CSS3: закругленные углы, 2D-преобразования и т.д.</a></p></li>
 </ul>
 
-<h1>USEFUL URLs</h1>
+
+<h1>ПОЛЕЗНЫЕ ССЫЛКИ</h1>
 
 <ul>
 <li><p><a href="http://diveintohtml5.org/">Dive Into HTML5</a></p></li>
@@ -487,16 +515,16 @@ I added this directive to <code>httpd.conf</code>:</p>
 <li><p><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">WHATWG Living Standard</a></p></li>
 </ul>
 
-<h1>ACKNOWLEDGEMENTS</h1>
 
-<p>Thanks to <a href="http://jumpstartlab.com/">Jeff Casimir</a> for helping me organize this material, and to <a href="http://diveintomark.org/">Mark Pilgrim</a> for writing Dive Into HTML5 which was a big help. Any mistakes are my own of course!</p>
+<h1>БЛАГОДАРНОСТИ</h1>
 
-<h1>KEEP IN TOUCH</h1>
+<p>Автор благодарит <a href="http://jumpstartlab.com/">Jeff Casimir</a> за помощь в подготовке этого практикума и <a href="http://diveintomark.org/">Mark Pilgrim</a> за написание книги Dive Into HTML5, которая стала большим подспорьем. Разумеется, все ошибки в этом практикуме на совести самого автора!</p>
 
-<p>Thanks for coming to my tutorial.  I'm <a href="mailto:mike@subelsky.com">mike@subelsky.com</a> or <a href="http://twitter.com/subelsky">@subelsky</a>
-on Twitter.  I love talking about HTML5, so email me if you have
-questions or want to discuss interesting challenges.</p>
+<h1>ОБРАТНАЯ СВЯЗЬ</h1>
 
-<p>Most of the techniques I discuss in this tutorial I learned building
-an HTML5-powered game for programmers named EXP.  We're accepting beta
-testers now, visit <a href="http://exp.subelsky.com/">exp.subelsky.com</a> to signup!</p>
+<p>Спасибо за то, что заинтересовались этим практикумом.  Связаться со мной можно тут: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x6d;&#105;&#x6b;&#101;&#x40;&#115;&#x75;&#98;&#x65;&#x6c;&#x73;&#x6b;&#121;&#46;&#99;&#111;&#x6d;">&#109;&#x69;&#107;&#x65;&#x40;&#115;&#x75;&#98;&#101;&#x6c;&#x73;&#x6b;&#x79;&#x2e;&#99;&#111;&#109;</a>, или в твиттере: <a href="http://twitter.com/subelsky">@subelsky</a>. Я обожаю разговоры о HTML5, поэтому не стесняйтесь связываться со мной, если у вас возникли вопросы, или вы хотите обсудить интересные задачи.</p>
+
+<p>Большинству приемов, которые обсуждаются в этом практикуме, я научился во время работы над игрой для программистов, использующей возможности HTML5. Игра эта называется EXP, и нам нужны бета-тестеры. Заявку на участие можно оставить здесь: <a href="http://exp.subelsky.com/">exp.subelsky.com</a>.</p>
+
+  </body>
+</html>
