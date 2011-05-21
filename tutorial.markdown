@@ -421,39 +421,36 @@
 
     А можно просто воспользоваться другим браузером.
 
-3. You should see the worker immediately post a response to the console. Try increasing the size of the number you pass to worker.postMessage until you get something that takes awhile to run (like 1,000,000). Notice
-that your web page continues to be responsive even as this task runs in the background.
+3. Worker должен отправить в консоль сообщение. Попробуйте передадать в `worker.postMessage` большее число. Достаточно большое число (например, 1,000,000) приведет к длительным вычислениям. Обратите внимание, что страница останется отзывчивой  при выполнении такого фонового задания.
 
-Here's a [more complicated webworker example](http://nerget.com/rayjs-mt/rayjs.html).
+Вот [более сложный пример использования webworker](http://nerget.com/rayjs-mt/rayjs.html).
 
-# EXERCISE TWELVE
-## Offline Apps
+# УПРАЖНЕНИЕ 12
+## Оффлайновые приложения
 
-1. Examine the `index.html` file in the `manifest` directory. This is a stripped-down version of the exercise 11 solution. Check out the `<html>` tag which now includes a reference to `demo.manifest.`
+1. Изучите файл `index.html` в папке `manifest`. Это сокращенная версия решения упражнения 11. Обратите внимание на тэг `<html>`, который в этой версии содержит ссылку на `demo.manifest.`
 
-2. Examine `demo.manifest`.
+2. Изучите `demo.manifest`.
 
-3. If you have a packet sniffer, start it sniffing on port 80. Otherwise, make sure your JavaScript console is recording network traffic.
+3. Если у вас установлен сниффер, натравите его на порт 80. Если сниффера нет, убедитесь, что консоль JavaScript отслеживает сетевой траффик.
 
-4. Now visit <http://files.subelsky.com/manifestdemo/index.html>
+4. Зайдите на <http://files.subelsky.com/manifestdemo/index.html>
 
-5. In your packet sniffer or JavaScript console, note that all files are being downloaded, and note the MIME type of the `demo.manifest` file (`text/cache-manifest`).
+5. Посмотрите в сниффере или консоли JavaScript, какие файлы скачиваются. Обратите внимание на MIME-тип файла `demo.manifest` (`text/cache-manifest`).
 
-6. Now reload the page. If all goes well, the only traffic you'll see moving along the wire is a request to check the demo.manifest file, which doesn't even get downloaded since it is unchanged 
-(because of the `304` HTTP response status code).
+6. Теперь обновите страницу. Если все заработает как надо, траффик будет состоять из единственного запроса проверки файла `demo.manifest`, который даже не будет скачан, т.к. он не изменялся (о чем свидетельствует статус `304` HTTP-отвера).
 
-    This is the same technique you can use to make an HTML5 app "installable" on a smart phone.
+    Используя эту технику, можно "установить" HTML5-приложение на смартфон.
 
-## Extra Credit
+## Дополнительное задание
 
-Get `manifest/index.html` running on your dev machine. All you need to do is serve up the directory from the webserver (vs. from `file://`), and make sure the manifest file has the right MIME type. In Apache,
-I added this directive to `httpd.conf`:
+Запустите `manifest/index.html` на локальном сервере. Папка с приложением должна отдаваться с веб-сервера (а не через файл `file://`), а файл с манифестом должен иметь правильный MIME-тип. В Apache это достигается следующей директивой в `httpd.conf`:
 
     AddType text/cache-manifest .manifest
 
-# THAT WAS TOO EASY?
+# СЛИШКОМ ПРОСТО?
 
-Here are some other "HTML5-ish" features that you should be aware of that didn't fit into this tutorial or are too bleeding-edge to be used reliably:
+Вот еще несколько возможностей HTML5, о который стоит знать, если этот практикум вам не подошел, или если вы считаете, что пока эти технологии слишком нестабильны для практического применения:
 
 * [Microdata](http://diveintohtml5.org/extensibility.html)
 
@@ -461,13 +458,13 @@ Here are some other "HTML5-ish" features that you should be aware of that didn't
 
 * [HTML5 History API](http://html5demos.com/history/)
 
-* [Alternatives to websockets](http://html5doctor.com/methods-of-communication/)
+* [Альтернатива websockets](http://html5doctor.com/methods-of-communication/)
 
-* [Polyfills to get HTML5 features working across browsers](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills) and also [Uber](http://html5doctor.com/how-to-get-all-the-browsers-playing-ball/)
+* [Polyfills, или как добавить кросс-браузерную поддержку HTML5](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills), также посмотрите [Uber](http://html5doctor.com/how-to-get-all-the-browsers-playing-ball/)
 
-* [Various CSS3 capabilities like rounded corners, 2D transforms, etc.](http://www.css3.com/)
+* [Возможности CSS3: закругленные углы, 2D-преобразования и т.д.](http://www.css3.com/)
 
-# USEFUL URLs
+# ПОЛЕЗНЫЕ ССЫЛКИ
 
 * [Dive Into HTML5](http://diveintohtml5.org/)
 
@@ -481,16 +478,12 @@ Here are some other "HTML5-ish" features that you should be aware of that didn't
 
 * [WHATWG Living Standard](http://www.whatwg.org/specs/web-apps/current-work/multipage/)
 
-# ACKNOWLEDGEMENTS
+# БЛАГОДАРНОСТИ
 
-Thanks to [Jeff Casimir](http://jumpstartlab.com/) for helping me organize this material, and to [Mark Pilgrim](http://diveintomark.org/) for writing Dive Into HTML5 which was a big help. Any mistakes are my own of course!
+Автор благодарит [Jeff Casimir](http://jumpstartlab.com/) за помощь в подготовке этого практикума и [Mark Pilgrim](http://diveintomark.org/) за написание книги Dive Into HTML5, которая стала большим подспорьем. Разумеется, все ошибки в этом практикуме на совести самого автора!
 
-# KEEP IN TOUCH
+# ОБРАТНАЯ СВЯЗЬ
 
-Thanks for coming to my tutorial.  I'm <mike@subelsky.com> or [@subelsky](http://twitter.com/subelsky)
-on Twitter.  I love talking about HTML5, so email me if you have
-questions or want to discuss interesting challenges.
+Спасибо за то, что заинтересовались этим практикумом.  Связаться со мной можно тут: <mike@subelsky.com>, или в твиттере: [@subelsky](http://twitter.com/subelsky). Я обожаю разговоры о HTML5, поэтому не стесняйтесь связываться со мной, если у вас возникли вопросы, или вы хотите обсудить интересные задачи.
 
-Most of the techniques I discuss in this tutorial I learned building
-an HTML5-powered game for programmers named EXP.  We're accepting beta
-testers now, visit [exp.subelsky.com](http://exp.subelsky.com/) to signup!
+Большинству приемов, которые обсуждаются в этом практикуме, я научился во время работы над игрой для программистов, использующей возможности HTML5. Игра эта называется EXP, и нам нужны бета-тестеры. Заявку на участие можно оставить здесь: [exp.subelsky.com](http://exp.subelsky.com/).
